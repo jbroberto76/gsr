@@ -1,0 +1,17 @@
+.slidev-layout {
+    p {
+      font-size: 24px
+    }
+  
+    ul {
+      font-size: 24px
+    }
+
+    strong {
+      color: #3ab9d5;
+    }
+  }
+
+  pre, code {
+    --uno: select-text;
+  }

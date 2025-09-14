@@ -81,6 +81,8 @@ layout: quote
 > Qualidade daquilo que é confidencial (que se diz ou que se faz com confiança e com segurança). Trata-se de uma **propriedade** da informação que pretende garantir
 o acesso unicamente às pessoas autorizadas
 
+<br><br>
+
 > Privacidade assegura que os **indivíduos** controlem ou influenciem quais informações podem ser obtidas e armazenadas e quem pode ter acesso 
 
 ---
@@ -91,7 +93,7 @@ o acesso unicamente às pessoas autorizadas
 
 <br>
 
-> Integridade do sistema assegura que um sistema execute suas funcionalidades de forma ilesa, livre de manipulações intencionais 
+> Integridade assegura que um sistema execute suas funcionalidades de forma ilesa, livre de manipulações intencionais de terceiros
 
 ---
 
@@ -114,12 +116,12 @@ backgroundSize: contain
 
 # O que são *hashes*?
 
-> Algoritmos matemáticos que transformam qualquer bloco de dados em uma código de caracteres de tamanho fixo (*Message Digest*)
+> Algoritmos matemáticos que transformam qualquer bloco de dados em uma **código** de caracteres de tamanho fixo (*Message Digest*)
 
 Exemplos:
-- MD5 (*Message Digest* 5), de 128bits
+- MD5, de 128bits
 - SHA (*Secure Hash Algorithm*)
-    - SHA-1, 160bits ou 40 dígitos Hex
+    - SHA-1, 160bits
     - SHA-256, 256bits
     - SHA-512, 512bits
 
@@ -147,7 +149,7 @@ backgroundSize: contain
 
 # Riscos a Disponibilidade
 
-- DoS (*Denial of Service)
+- DoS (*Denial of Service*)
 - *Malwares*
 
 ---
@@ -207,12 +209,13 @@ Disponibilidade (Impacto Alto)
 
 ---
 
-# Arquitetura OSI Recomendação X.800 (ITU -T) 
+# Arquitetura OSI
+Recomendação X.800 (ITU -T) 
 
 - Metodologia para avaliar as necessidades de segurança de uma organização 
 - Organiza a tarefa de prover segurança 
 
-Focaliza: 
+Concentra-se em: 
 - Ataques à segurança
 - Mecanismos de segurança
 - Serviços de segurança  
@@ -263,14 +266,14 @@ Exemplos
 
 # Ataques Ativos 
 
-> Envolvem modificação no fluxo dos dados e/ou criação de fluxo falso. 
+> Envolvem **modificação** no fluxo dos dados e/ou criação de fluxo falso
 
 Categorias
 
-- Disfarce quando uma entidade finge ser outra com privilégios maiores
-- Repasse envolve a captura de dados e criação de uma nova retransmissão
-- Modificação de mensagens envolve a captura de dados e retransmissão modificada
-- Negação de serviço impede ou inibe a utilização normal das instalações
+- **Disfarce** quando uma entidade finge ser outra com privilégios maiores
+- **Repasse** envolve a captura de dados e criação de uma nova retransmissão
+- **Modificação** de mensagens envolve a captura de dados e retransmissão modificada
+- **Negação de serviço** impede ou inibe a utilização normal das instalações
 
 ---
 
@@ -314,28 +317,134 @@ Categorias
 ---
 
 # Confidencialidade 
+Confidencialidade da conexão
 
-- **Confidencialidade da conexão**, garante a confidencialidade de todos os dados do usuário durante o uso da conexão 
-- **Confidencialidade sem conexão**, protege dos dados do usuário em um único bloco de dados 
-- **Confidencialidade em campo seletivo**, garante a confidencialidade dos dados em campos selecionados dentro dos dados dados do usuário em uma conexão ou bloco de dados 
-- **Confidencialidade do fluxo de tráfego**, protege as informações derivadas dos fluxos de tráfego  
+> Garante a confidencialidade de todos os dados do usuário durante o uso da conexão
+- **Exemplo**, uso de TLS (SSL) em uma conexão HTTPS, que garante que todo o fluxo entre cliente e servidor é cifrado.
+
+---
+
+# Confidencialidade 
+Confidencialidade sem conexão
+
+> Protege dos dados do usuário em um único bloco de dados (PDU, *Protocol Data Unit*) sem exigir que uma conexão seja estabelecida
+
+**Exemplo**, envio de um e-mail criptografado, onde cada mensagem é protegida individualmente e não necessariamente os meios de acessar o e-mail
+
+---
+
+# Confidencialidade
+Confidencialidade em campo seletivo, 
+
+> Garante a confidencialidade dos dados em campos selecionados dentro dos dados dados do usuário em uma conexão ou bloco de dados
+
+<br>
+```json
+{
+  "idTransacao": "98372",
+  "agencia": "1234",
+  "conta": "567890-1",
+  "valor": 2500.75,
+  "moeda": "BRL",
+  "descricao": "Pagamento fornecedor",
+  "timestamp": "2025-09-14T13:45:00Z"
+}
+```
+
+---
+
+# Confidencialidade
+Confidencialidade em campo seletivo, 
+
+> Garante a confidencialidade dos dados em campos selecionados dentro dos dados dados do usuário em uma conexão ou bloco de dados
+
+<br>
+```json
+{
+  "idTransacao": "98372",
+  "agencia": "1234",
+  "conta": "ENCRYPTED(4f7a8b...)",
+  "valor": "ENCRYPTED(d2a3e1...)",
+  "moeda": "BRL",
+  "descricao": "ENCRYPTED(a9c4d6...)",
+  "timestamp": "2025-09-14T13:45:00Z"
+}
+```
+
+---
+
+# Confidencialidade
+Confidencialidade do fluxo de tráfego
+
+> Protege as informações derivadas dos fluxos de tráfego que possam identificar padrões de comunicação mesmo sem acesso às informações
+
+**Exemplo** uso de redes anônimas como Tor, redes militares, as VPNs. 
+
+**Técnicas** *padding*, padronização de tamanhos de pacotes e encaminhamento por múltiplos caminhos
 
 ---
 
 # Integridade 
+Integridade da conexão com recuperação 
 
-- **Integridade da conexão com recuperação**, providencia a integridade de todos os dados do usuário em uma conexão e detecta qualquer modificação, inserção, exclusão ou repasse de quaisquer dados dentro de uma sequência inteira, com tentativa de recuperação
-- **Integridade de conexão sem recuperação**, oferece apenas detecção sem tentativa de recuperação
-- **Integridade da conexão com campo seletivo**, providencia a integridade de campos selecionados nos dados do usuário de um bloco de dados transferido por uma conexão e determina se os campos selecionados foram modificados, inseridos, excluídos ou repassados
-- **Integridade sem conexão**, providencia a integridade de um único bloco de dados sem conexão e pode tomar a forma de detecção da modificação de dados 
-- **Integridade sem conexão com campo seletivo**, providencia a integridade de campos selecionados dentro de um único bloco de dados sem conexão; determina se os campos selecionados foram modificados
+> Providencia a integridade de todos os dados do usuário em uma conexão e detecta qualquer modificação, inserção, exclusão ou repasse de quaisquer dados dentro de uma sequência inteira, com tentativa de recuperação
+
+**Exemplo**<br>Um canal TLS com código de verificação (HMAC, *Hash-based Message Authentication Code*) em cada pacote, que permite detectar se houve alteração, além de retransmissão em caso de erro
+
 
 ---
 
-# Irretratabilidade
+# Integridade 
+Integridade da conexão sem recuperação 
 
-- **Irretratabilidade de origem**, prova que a mensagem foi enviada pela parte especificada 
-- **Irretratabilidade de destino**, prova que a mensagem foi recebida pela parte especificada  
+> Garante apenas que os dados não foram alterados ou inseridos de forma não autorizada, mas não corrige a falha
+
+**Exemplo**<br>Protocolos que usam MAC (Message Authentication Code) para detectar alterações, mas encerram a sessão se um erro for detectado.
+
+---
+
+# Integridade
+Integridade da conexão com campo seletivo
+
+> Providencia a integridade de campos selecionados nos dados do usuário de um bloco de dados transferido por uma conexão e determina se os campos selecionados foram modificados, inseridos, excluídos ou repassados
+
+**Exemplo**<br>Em um cabeçalho de protocolo, aplicar integridade apenas sobre os campos de controle, não sobre a carga útil
+
+---
+
+# Integridade
+Integridade sem conexão com recuperação
+
+> Providencia a integridade de um único bloco de dados sem conexão e pode tomar a forma de detecção da modificação de dados
+
+**Exemplo** Sistemas de e-mail seguro (S/MIME ou PGP) que podem detectar e solicitar retransmissão de mensagens corrompidas
+
+---
+
+# Integridade
+Integridade sem conexão sem recuperação
+
+> Garante a integridade de mensagens individuais, mas apenas detecta a necessidade de alteração, sem corrigir.
+
+**Exemplo** Assinatura digital em um contrato eletrônico em que caso o documento seja alterado, a assinatura não valida, sem a recuperação do original
+
+---
+
+# Irretratabilidade (*non-repudiation*)
+Irretratabilidade de origem
+
+> Garante que o remetente não possa negar ter enviado a mensagem
+
+**Exemplo**<br>Uma assinatura digital em um e-mail ou contrato eletrônico; o emissor não pode negar autoria pois a assinatura depende de sua chave privada.
+
+---
+
+# Irretratabilidade (*non-repudiation*)
+Irretratabilidade de destino
+
+> Garante que o destinatário não possa negar ter recebido a mensagem
+
+**Exemplo**<br>Protocolos de entrega de e-mail com confirmação assinada digitalmente, ou sistemas de mensagens corporativas que exigem recibo autenticado.
 
 ---
 
@@ -355,16 +464,16 @@ Mecanismos de Segurança
 ---
 
 # Mecanismos de Segurança
-CODIFICAÇÃO 
+Codificação, criptografia ou *encipherment*
 
-- Aplicação de algoritmos matemáticos para transformar os dados para um formato que não seja prontamente inteligível. A transformação e subsequente recuperação dos dados depende de um algoritmo com zero ou mais chaves de encriptação
+> Aplicação de algoritmos matemáticos para transformar os dados para um formato que não seja prontamente inteligível. A transformação e subsequente recuperação dos dados depende de um algoritmo com zero ou mais chaves de encriptação
 
 ---
 
 # Mecanismos de Segurança
 ASSINATURA DIGITAL 
 
-> Dados anexados a uma unidade de ados que permite que um destinatário prove sua origem e integridade protegendo -se contra falsificação.  
+> Dados anexados a uma unidade de dados que permite que um destinatário prove sua origem e integridade protegendo-se contra falsificação.  
 
 ---
 
@@ -385,7 +494,7 @@ INTEGRIDADE DOS DADOS
 # Mecanismos de Segurança
 TROCA DE AUTENTICAÇÃO 
 
-Conjunto de mecanismos aplicados para garantir a identidade de uma entidade por meio de troca de informações.  
+> Conjunto de mecanismos aplicados para garantir a identidade de uma entidade por meio de troca de informações.  
 
 ---
 
