@@ -19,8 +19,7 @@ Conceitos de Segurança
 Objetivo de Aprendizagem 
 - Conhecer conceitos básicos de segurança da informação
 
-## Aula 3
-Cifras Simétricas
+## Aula 3 - Cifras Simétricas
 
 ## Aula 4
 Dispositivos de Segurança de Redes
