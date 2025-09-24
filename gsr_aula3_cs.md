@@ -1,6 +1,6 @@
 ---
 theme: default
-trasition: fade
+transition: fade
 lineNumbers: true
 colorSchema: dark
 layout: image-right
@@ -267,11 +267,295 @@ Texto compactado
 - Chave de 168 bits 
 
 ---
+layout: quote
+---
+
+# Cifras Monoalfabéticas
+
+> A cifra de César respeita a sequência do alfabeto cifrado criando 25 possibilidades de chave. As cifras monoalfabéticas trazem um aprimoramento substituindo cada letra por QUALQUER outra letra
+
+$a \rightarrow Q\\$
+$b \rightarrow W\\$
+$c \rightarrow E\\$
+$d \rightarrow R\\$
+
+---
+
+# Cifras Monoalfabéticas
+
+- Chaves de cifras de substituição monoalfabéticas possuem $25!$ possibilidades (permutação)
+
+$$
+\begin{aligned}
+&S = \{ a, b, c\}\\
+&\underbrace{abc, acb, bac, bca, cab, cba}_{3!}\\
+\end{aligned}
+$$
+
+---
+
+# Cifras Monoalfabéticas
+
+- Aparenta segurança comparada a Cifra de César
+- Mesmo com pequena quantidade de texto, a cifra pode ser quebrada com estratégias de propriedades estatísticas de idiomas/texto
+
+---
+layout: image
+image: /img/texto_cifrado.png 
+backgroundSize: contain
+---
+
+# Exemplo de Texto Cifrado
+
+---
+image: /img/stats.png
+layout: image-right
+backgroundSize: contain
+---
+
+# Frequência Relativa
+
+- Considerando que o texto é em Inglês
+- Extrair a frequência relativa do texto cifrado
+- Comparar com a frequência do idioma
+
+---
+
+# Frequência Relativa
+
+- É provável que P e Z correspondam a 'e' e 't'
+- É provável S, U, O, M e H correspondam ao conjunto {a, h, i, n, o, r, s}
+- A, B, G, Y, I, J devem pertencer ao conjunto {b, j, k, q, v, x, z}
+
+---
+
+# Frequência Relativa
+
+- Busca pelo digrama mais frequente em inglês: *th*
+    - Corresponde ao ZW
+- Busca pelo trigrama mais frequente: *the*
+    - Corresponde ao ZWP
+- A sequência ZWSZ na primeira linha corresponde a 'th?t'
+    Fazendo uma tentativa de atribuição a *that*, teríamos S = 'a'
+
+---
+layout: image
+image: /img/quatro_letras.png
+backgroundSize: contain
+---
+
+# Frequência Relativa
+A partir de 4 letras
+
+---
+layout: image
+image: /img/texto_decifrado.png
+backgroundSize: contain
+---
+
+# Frequência Relativa
+Texto Decifrado
+
+---
+
+# Frequência Relativa
+Digramas mais frequentes (pt-br)
+
+- DE - (Artigo "de")
+- ES - (Sufixo de plural, "os", "as" -> "es" em muitas palavras)
+- EN - (Presente em muitas palavras como "então", "mente")
+- TE - (Sufixo verbal "-te", "mente")
+- DO - (Artigo contraído "do")
+- DA - (Artigo contraído "da")
+- OS - (Artigo "os")
+- AS - (Artigo "as")
+- EM - (Preposição "em")
+
+---
+
+# Frequência Relativa
+Trigramas mais frequentes (pt-br)
+
+- QUE - (Conjunção e pronome extremamente comum)
+- ENT - (Presente em "entre", "então", "mente", "entidade")
+- ADE - (Final de palavras como "idade", "dade", "ade")
+- MEN - (Principalmente do sufixo "-mente")
+- DES - (Prefixos "des-", "dis-")
+- PAR - ("para", "parte", "par")
+- TRA - ("tra", "trás", "trabalho")
+- ÇÃO - (Sufixo nominal extremamente comum)
+- COM - (Preposição "com")
+- EST - ("estar", "este", "está")
+
+---
+
+# Frequência Relativa
+Ordem aproximada das letras mais frequentes (pt-br)
+
+A, E, O, S, R, I, D, N, M, T, C, U, L, P, V, G, F, B, H, Q, J, Z, X, Y, K, W.
+
+---
+
+# Frequência Relativa
+Palavras curtas comuns (pt-br)
+
+- **1 letra**: A (artigo), E (conjunção), O (artigo)
+- **2 letras**: DE, DO, DA, EM, OS, AS, SE, AO, ÀS, UM, UMA, É, É.
+- **3 letras**: QUE, COM, PARA, POR, SEM, UMA, NAS, DOS, DAS, ENT, TEM, SUA, SER.
+
+---
+layout: quote
+---
+
+# John the Ripper
+
+> Ferramentas como o *John the Ripper* (com seu modo --substring) ou o *Criptool* possuem algoritmos que calculam estatísticas de n-gramas (digramas, trigramas, tetragramas) e usam tentativa e erro otimizado para encontrar a chave de substituição que maximiza a "pontuação" do texto decifrado, ou seja, que o torna mais parecido com um texto legível em português ou outro idioma.
+
+[Openwall](https://www.openwall.com/john/)
+
+---
+
+# Cifras de Substituição
+
+- A frequência do alfabeto original se reflete no alfabeto da cifra, facilitando sua quebra
+- Uma melhoria da CS consiste em utilizar vários alfabetos de cifra (Cifras Polialfabéticas)
+- Outra possível melhoria seria o uso de homófonos
+    - Atribuir vários símbolos diferentes em rodízio para mesma letra
+    - Cifra *Playfair*
+    - Cifra de *Hill*
+
+---
+layout: image-right
+image: /img/vigenere.png
+backgroundSize: contain
+---
+
+# Cifras Polialfabéticas
+
+- Utilizam um conjunto de regras monoalfabéticas simultaneamente
+- Uma chave determina a regra específica
+- Cifra de *Vigenère*
+    - Utiliza 26 cifras de César
+- É necessário utilizar uma chave tão grande quanto a mensagem para tornar a cifra segura (repete-se uma palavra-chave)
+
+---
+layout: image-right
+image: /img/vigenere.png
+backgroundSize: contain
+---
+
+# Cifra de *Vigenère*
+Fragilidades
+
+- As informações de frequência do texto são ocultados, mas não são totalmente perdidas
+- É possível determinar o tamanho da palavra chave buscando padrões de repetição no texto
+
+---
+layout: image-right
+image: /img/otp.png
+backgroundSize: contain
+---
+
+# One Time Pad
+
+- Chave do mesmo tamanho da mensagem
+- Chave descartada após o uso
+- Uso de XOR entre o texto claro e a chave
+- Sistema inquebrável
+    - Produz uma saída com nenhuma relação estatística com a entrada
+
+---
+
+# One Time Pad
+Fragilidades
+
+- Sistema inquebrável, porém pouco prático
+- A largura de banda exigida para as chaves é similar aos dados
+- Problema de distribuição de chaves
+
+---
+layout: section
+---
+
+# Cifras de Transposição
+
+---
+layout: image-right
+image: /img/railfence.png
+backgroundSize: contain
+---
+
+# Cifras Transposição
+
+- Técnicas que envolvem a permutação das letras do texto claro
+- *Rail fence*
+    Exemplo de texto de claro: *Meet after the toga party*
+
+---
+layout: image-right
+image: /img/railfence2.png
+backgroundSize: contain
+---
+
+# *Rail Fence*
+
+---
+
+# Cifras Transposição
+
+- Criptoanálise explora as CT através das estatísticas de frequência aplicadas as cifras alfabéticas
+- Melhorias são obtidas aplicando múltiplos estágios de transposição
+
+---
+layout: section
+---
+
+# Máquinas de Rotor
+
+---
+
+# Máquinas de Rotor
+
+- Aplica várias etapas de encriptação
+- Precursor da encriptação DES
+- Conjunto de cilindros independentes
+- 26 pinos de entrada + 26 pinos de saída
+
+---
+layout: image
+image: /img/rotores.png
+backgroundSize: contain
+---
+
+
+---
+
+# Máquinas de Rotor
+
+- Aplicando 3 rotores com 26 letras cada tem-se 17.576 alfabetos possíveis
+- Com 4 rotores 456.976 alfabetos
+- Uma máquina com 5 rotores é equivalente a uma Cifra de *Vigenère* com chave de tamanho maior que 11 milhões de letras
+- *Enigma* e *Purple* foram máquinas usadas na segunda guerra
+
+---
+
+# Como funciona a *Enigma*?
+
+<Youtube id="5w3zDa7bgLU" />
+
+---
+
+# Como a *Enigma* foi Quebrada?
+
+<Youtube id="E0YX8BC4RLo" />
+
+---
 
 # Referências 
 
-- Capítulo 1 . Criptografia e Segurança de Redes. William Stallings. 4a. Ed. Editora Pearson.
-- 
+- **Capítulo 2**  . Criptografia e Segurança de Redes. William Stallings. 4a. Ed. Editora Pearson.
+- [Como funciona a *Enigma*?](https://www.youtube.com/watch?v=5w3zDa7bgLU)
+- [Como a *Enigma* foi Quebrada?](https://www.youtube.com/watch?v=5w3zDa7bgLU)
 
 ---
 src: /src/end.md

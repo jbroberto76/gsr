@@ -6,10 +6,17 @@ backgroundSize: contain
 --- 
 
 # {{ $slidev.configs.author }}
-jbroberto@ifce.edu.br
 
-[https://github.com/jbroberto76](https://github.com/jbroberto76)
 
+<p style="line-height: 36px">
+
+<mdi-email class="inline-block"/> [jbroberto@ifce.edu.br](jbroberto@ifce.edu.br)
+
+<br>
+
+<carbon-logo-github class="inline-block"/> [jbroberto76](https://github.com/jbroberto76)
+
+</p>
 <br><br><br><br><br><br><br><br><br><br><br>
 
 <PoweredBySlidev /><br>
