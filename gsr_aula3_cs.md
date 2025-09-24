@@ -34,13 +34,15 @@ description: Gerência e Segurança de Redes
 layout: section
 ---
 
-# Cifra simétrica
-Modelo
+# Modelo de Cifra simétrica
+
 
 ---
 layout: image
 image: /img/modelo_sc.png
 backgroundSize: contain
+---
+
 ---
 
 # Cifra simétrica
@@ -156,21 +158,21 @@ backgroundSize: contain
 
 ---
 
-# 💪 Brute-Force Attack
+# Brute-Force Attack
 - **Ataque por força bruta**
 - Testa exaustivamente todas as chaves possíveis
 - **Eficácia**: Dependente do tamanho da chave
 
 ---
 
-# 📚 Dictionary Attack
+# Dictionary Attack
 - **Utiliza um dicionário de entradas prováveis**
 - Eficaz quando o texto claro vem de um conjunto limitado
 - **Exemplo**: Ataque a senhas comuns
 
 ---
 
-# 👥 Man-in-the-Middle
+# Man-in-the-Middle
 - **Ataque ativo à comunicação**
 - Atacante se posiciona entre duas partes legítimas
 - **Objetivo**: Interceptar e possivelmente modificar comunicação
@@ -541,13 +543,17 @@ backgroundSize: contain
 
 # Como funciona a *Enigma*?
 
-<Youtube id="5w3zDa7bgLU" />
+<!-- <Youtube id="5w3zDa7bgLU" /> -->
+
+[Como funciona a *Enigma*?](https://www.youtube.com/watch?v=5w3zDa7bgLU)
+
 
 ---
 
 # Como a *Enigma* foi Quebrada?
 
-<Youtube id="E0YX8BC4RLo" />
+<!-- <Youtube id="E0YX8BC4RLo" /> -->
+[Como a *Enigma* foi Quebrada?](https://www.youtube.com/watch?v=5w3zDa7bgLU)
 
 ---
 
