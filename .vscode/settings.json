@@ -1,0 +1,8 @@
+{
+    "slidev.include": [
+        "**/slides.md",
+        "gsr_aula3_cs.md",
+        "gsr_aula2_conceitos.md",
+        "gsr_aula1_perigos.md"
+    ]
+}

@@ -1,5 +1,6 @@
 ---
 theme: default
+transition: fade
 lineNumbers: true
 colorSchema: dark
 layout: image-right
