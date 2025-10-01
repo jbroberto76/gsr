@@ -17,9 +17,12 @@ backgroundSize: contain
 <carbon-logo-github class="inline-block"/> [jbroberto76](https://github.com/jbroberto76)
 
 </p>
-<br><br><br><br><br><br><br><br><br><br><br>
+
+<div class="absolute bottom-5">
 
 <PoweredBySlidev /><br>
 
 ##### Foto da capa by <a href="https://unsplash.com/pt-br/@maxxna?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Mona Bernhardsen</a> na <a href="https://unsplash.com/pt-br/fotografias/um-barco-flutuando-em-cima-de-um-grande-corpo-de-agua-1s9OyG6YkfI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
+</div>
       
