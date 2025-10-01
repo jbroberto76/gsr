@@ -182,7 +182,7 @@ layout: quote
 # Cifra de Feistel
 Permutações
 
-> Uma sequência de elementos de texto claro é permutada dessa, ou seja, nenhum elemento é acrescentado, removido ou substituído na sequência, mas a ordem em que os elementos aparecem é modificada.
+> Uma sequência de elementos de texto claro é permutada, ou seja, nenhum elemento é acrescentado, removido ou substituído na sequência, mas a ordem em que os elementos aparecem é modificada.
 
 ---
 
@@ -315,8 +315,8 @@ layout: section
 - Criptografia mais utilizada antes do AES (2001)
 - Adotado pelo NIST em 1977
 - Reafirmado em 1994
-- Substituído pelo $Triple$ DES em 1999
-- $Triple$ DES substituído pelo AES em 2001
+- Substituído pelo *Triple*$* DES em 1999
+- *$*Triple* DES substituído pelo AES em 2001
 
 ---
 
@@ -360,7 +360,7 @@ backgroundSize: contain
 *Electronic Code Book*
 
 - O texto claro é dividido em blocos de 64 bits
-- Cada bloco é criptografado de forma independente e com a mesma chave
+- Cada bloco é criptografado de forma independente com a mesma chave
 - Esta estratégia fragiliza a cifra, pois blocos idênticos de texto claro produzem blocos idênticos de texto cifrado
 - Cria padrões "visíveis" na cifra (ECB *Penguin*)
 
@@ -407,7 +407,7 @@ layout: quote
 
 ---
 
-> OpenSSL é uma biblioteca de software de código aberto e uma ferramenta de linha de comando usada para implementar os protocolos SSL e TLS para comunicações seguras.
+> OpenSSL é uma biblioteca de *software* de código aberto e uma ferramenta de linha de comando usada para implementar os protocolos SSL e TLS para comunicações seguras.
 
 ---
 
@@ -432,7 +432,7 @@ layout: quote
 # SSL ou TLS?
 *Transport Layer Security*
 
-> O SSL é o antecessor direto de outro protocolo chamado TLS. Em 1999, a Força-Tarefa de Engenharia da Internet (IETF) propôs uma atualização do SSL
+> O SSL é o antecessor direto de outro protocolo chamado TLS. Em 1999, o IETF (*Internet Engineering Task Force*) propôs uma atualização do SSL
 
 ---
 layout: image
@@ -446,7 +446,7 @@ backgroundSize: contain
 Como usar?
 
 - Linha de comando
-- Comandos + Subcomandos + Opções
+- `openssl` + Subcomando + Opções
 - Exemplos
     - `openssl help`
 
