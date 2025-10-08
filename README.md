@@ -5,26 +5,36 @@ Código fonte das aulas de Gerência e Segurança de Redes (GSR), IFCE, Campus F
 
 <hr>
 
-## Aula 0
+### Aula 0
 - Metodologia da disciplina
 - Material de apoio
 - Avaliação
 
-## Aula 1
+### Aula 1
 *Security Operation Center*
 
-## Aula 2
+### Aula 2
 Conceitos de Segurança
 
 Objetivo de Aprendizagem 
 - Conhecer conceitos básicos de segurança da informação
 
-## Aula 3 - Cifras Simétricas
+### Aula 3 - Cifras Simétricas
 
-## Aula 4
+Objetivos de Aprendizagem 
+- Conhecer o conceito de cifra simétrica
+- Conhecer as técnicas clássicas relacionadas a CS
+
+Agenda 
+- Modelo
+- Técnicas de substituição
+- Técnicas de transposição
+- Máquinas de rotor
+
+### Aula 4
 Dispositivos de Segurança de Redes
 
-## Aula 5
+### Aula 5
 DES
 
 ## Aula 6

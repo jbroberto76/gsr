@@ -16,7 +16,7 @@ description: Gerência e Segurança de Redes
 
 ---
 
-# Objetivo de Aprendizagem 
+# Objetivos de Aprendizagem 
 
 - Conhecer o conceito de cifra simétrica
 - Conhecer as técnicas clássicas relacionadas a CS
