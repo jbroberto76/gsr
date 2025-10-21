@@ -209,8 +209,69 @@ backgroundSize: contain
 # RC4
 Funcionamento
 
+- Chave $K$ possui tamanho variável entre 1 a 256 bytes (8 a 2048 bits)
+- A chave inicializa o vetor de estados $S$ de 256 bytes
 
+$$
+\begin{aligned}
+S[0] &= 0,\\S[1] &= 1,\\ ... ,\\ S[255] &= 255
+\end{aligned}
+$$
 
+---
+
+# RC4
+$T$
+
+- Se $K$ tem 256 bytes, um vetor temporário, $T$, é inicializado com o valor de $S$
+- Caso contrário, $K$ é replicado em $T$ até que tenha o mesmo tamanho de $S$
+- Resumo em pseudo-código:
+
+```c {*}{class:'!children:text-xl'}
+for i = 0 to 255
+    S[i] = i;
+    T[i] = K[i mod keylen];
+```
+
+---
+
+# RC4
+Permutações
+
+- A função de $T$ é causar permutações em $S$, conforme abaixo
+
+```c {*}{class:'!children:text-xl'}
+j = 0;
+for i = 0 to 255 do
+    j = (j + S[i] + T[i]) mod 256;
+    Swap (S[i], S[j])
+```
+
+---
+
+# RC4
+Fluxo de chaves
+
+- O fluxo é gerado percorrendo cada elemento de $S$ e realizando as permutações
+
+```c {*}{class:'!children:text-xl'}
+i, j = 0;
+while True
+    i = (i + 1) mod 256;
+    j = (j + S[i]) mod 256;
+Swap (S[i], S[j])
+t = (S[i] + S[j]) mod 256;
+k = S[t]
+```
+
+---
+layout: image
+image: https://blog.cloudflare.com/content/images/rc4.gif
+backgroundSize: contain
+---
+
+# RC4
+Animação com State de 32 bytes
 
 
 ---
