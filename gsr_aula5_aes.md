@@ -4,7 +4,7 @@ transition: fade
 lineNumbers: true
 colorSchema: dark
 layout: image-right
-image: /img/mona-bernhardsen-1s9OyG6YkfI-unsplash.jpg
+image: /mona-bernhardsen-1s9OyG6YkfI-unsplash.jpg
 title: Advanced Encryption Standard
 exportFilename: gsr_aula5_aes
 author: José Roberto Bezerra
@@ -27,7 +27,7 @@ description: Gerência e Segurança de Redes
 1. Características
 2. Estrutura geral
 3. Detalhamento
-2. Open SSL
+2. OpenSSL
 
 ---
 layout: section
@@ -104,7 +104,7 @@ Funções de transformação
 - As outras funções acrescentam confusão, difusão e não linearidade
 
 ---
-image: /img/aes_rounds.png
+image: /aes_rounds.png
 layout: image
 backgroundSize: contain
 ---
@@ -122,7 +122,7 @@ backgroundSize: contain
 
 ---
 layout: image-right
-image: /img/subbytes.png
+image: /subbytes.png
 backgroundSize: contain
 ---
 
@@ -165,7 +165,7 @@ b_{i}^{*} &= b_i \oplus b_{(i+4)\mod{8}} \oplus b_{(i+5)\mod{8}} \oplus b_{(i+6)
 $$
 
 ---
-image: /img/s_box_4x4.png
+image: /s_box_4x4.png
 layout: image-right
 backgroundSize: contain
 ---
@@ -186,7 +186,7 @@ Exemplo 4x4
 - Garante que os 4 bytes de uma coluna sejam espalhados em quatro colunas diferentes
 
 ---
-image: /img/shiftrows.png
+image: /shiftrows.png
 layout: image-right
 backgroundSize: contain
 ---
@@ -210,7 +210,7 @@ Exemplo
 - A transformação de embaralhamento de colunas combinada com a de deslocamento de linhas garante que, após algumas rodadas, todos os *bits* da saída dependam de todos os *bits* da entrada.
 
 ---
-image: /img/mix_columns.png
+image: /mix_columns.png
 layout: image-right
 backgroundSize: contain
 ---
@@ -229,7 +229,7 @@ Diagrama
 - A complexidade da expansão de chave da rodada, mais a dos outros estágios do AES, garantem a sua segurança.
 
 ---
-image: /img/addroundkey.png
+image: /addroundkey.png
 layout: image-right
 backgroundSize: contain
 ---
@@ -237,7 +237,7 @@ backgroundSize: contain
 # `AddRoundKey`
 
 ---
-image: /img/addroundkey_bytes.png
+image: /addroundkey_bytes.png
 layout: image-right
 backgroundSize: contain
 ---
@@ -311,7 +311,7 @@ No AES
 > O que é desejado é o efeito avalanche, em que uma pequena mudança no texto claro ou na chave produz uma grande alteração no texto cifrado.
 
 ---
-image: /img/avalanche_msg.png
+image: /avalanche_msg.png
 layout: image-right
 backgroundSize: contain
 ---
@@ -331,7 +331,7 @@ Texto claro
 > Ao selecionar dois textos claros ao acaso,espera-se que eles difiram em cerca de metade das posições de *bits* e os dois textos cifrados também se diferenciem em mais ou menos **metade** das posições.
 
 ---
-image: /img/avalanche_chave.png
+image: /avalanche_chave.png
 layout: image-right
 backgroundSize: contain
 ---
@@ -473,5 +473,5 @@ backgroundSize: contain
   - **Seções 5.2, 5.3, 5.4 e 5.5.**
 
 ---
-src: /src/end.md
+src: /snippets/end.md
 ---
