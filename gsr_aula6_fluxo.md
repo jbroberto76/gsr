@@ -257,7 +257,7 @@ Aplicações
 
 ---
 layout: image-right
-image: /rc4.png
+image: /rc4_v2.png
 backgroundSize: contain
 ---
 
@@ -275,7 +275,7 @@ $$
 
 ---
 layout: image-right
-image: /rc4.png
+image: /rc4_v2.png
 backgroundSize: contain
 ---
 
@@ -287,7 +287,7 @@ $T$
 
 ---
 layout: image-right
-image: /rc4.png
+image: /rc4_v2.png
 backgroundSize: contain
 ---
 
@@ -304,7 +304,7 @@ for i = 0 to 255
 
 ---
 layout: image-right
-image: /rc4.png
+image: /rc4_v2.png
 backgroundSize: contain
 ---
 
@@ -322,7 +322,7 @@ for i = 0 to 255 do
 
 ---
 layout: image-right
-image: /rc4.png
+image: /rc4_v2.png
 backgroundSize: contain
 ---
 
