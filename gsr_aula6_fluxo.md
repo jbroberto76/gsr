@@ -24,10 +24,10 @@ exportFilename: gsr_aula6_fluxo
 
 # Agenda 
 
-1. Estrutura
-2. Cifras Típicas
-3. Aplicações
-4. Vulnerabilidades
+- Estrutura
+- Cifras típicas
+- Aplicações
+- Vulnerabilidades
 
 ---
 layout: section
@@ -40,11 +40,11 @@ layout: section
 # Estrutura
 Cifras de fluxo
 
-- Criptografa um byte por vez
-- Comumente aplica a canais de comunicação ou aplicações cliente/servidor
+- Criptografa um *byte* por vez
+- Comumente aplicado a canais de comunicação ou aplicações cliente/servidor
 - Estrutura básica:
     - Chave de entrada ($K$)
-    - Fluxo de bits, ou fluxo de chave ($k$)
+    - Fluxo de *bits*, ou fluxo de chave ($k$)
     - XOR
     - Texto claro
     - Texto cifrado
@@ -146,7 +146,7 @@ Exemplos
 - Uma das primeiras CF (*Gilbert Vernam*, 1917)
 - Chave e texto claro do mesmo tamanho
 - XOR bit a bit entre texto claro e chave
-- Generalização do OTP
+- Generalização do *One Time Pad*
 
 ---
 
@@ -154,7 +154,7 @@ Exemplos
 
 - CF proposta por *Daniel Bernstein* em 2005
 - Segurança e eficiência
-- Chaves de 128, 192 e 256 bits
+- Chaves de 128, 192 e 256 *bits*
 - Fundamenta-se no uso de *nonces*
 
 ---
@@ -164,7 +164,7 @@ layout: quote
 # Salsa20
 *Number used Once*
 
-> Número aleatório utilizado uma única vez em um algoritmo criptográfico
+> Número aleatório utilizado uma única vez em um algorítmo criptográfico
 
 ---
 
@@ -218,7 +218,7 @@ Versões
 
 # Salsa20
 
-- Utiliza um *nonce* de 64 bits como entrada junto com uma chave secreta
+- Utiliza um `nonce` de 64 bits como entrada junto com uma chave secreta
 
 $$
 \begin{aligned}
@@ -311,7 +311,7 @@ backgroundSize: contain
 # RC4
 Permutações
 
-- A função de $T$ é causar permutações em $S$, conforme abaixo
+- A função de $T$ é causar permutações em $S$, conforme abaixo:
 
 ```c {*}{class:'!children:text-xl'}
 j = 0;
@@ -348,7 +348,7 @@ backgroundSize: contain
 ---
 
 # RC4
-Animação com State de 32 bytes
+Animação com `State` de 32 bytes
 
 ---
 layout: quote
@@ -357,7 +357,7 @@ layout: quote
 # RC4
 Fragilidades
 
-> O RC4 tem inicialização frágil. Os primeiros bytes do fluxo de chaves tem correlação com a chave de inicialização
+> O RC4 tem inicialização frágil. Os primeiros *bytes* do fluxo de chaves tem correlação com a chave de inicialização
 
 ---
 
@@ -373,7 +373,7 @@ Fragilidades
 
 - Vetor de inicialização (IV) de apenas 24 bits e reutilizado frequentemente
 - Chave composta de IV + chave secreta
-- A partir dos dois primeiros bytes do fluxo de chave a chave poderia ser encontrada a partir da coleta de dados na rede sem fio
+- A partir dos dois primeiros *bytes* do fluxo de chave a chave poderia ser encontrada a partir da coleta de dados na rede sem fio
 
 ---
 
@@ -388,7 +388,7 @@ Fragilidades
 Resumo
 
 - Formalmente, nunca houve a quebra da cifra RC4
-- Porém, as falhas de implementação no WEP difundiram uma imagem negatia da cifra de fluxo
+- Porém, as falhas de implementação no WEP difundiram uma imagem negativa da cifra de fluxo
 - Atualmente, o RC4 é considerado **obsoleto**
 - Removido da TLS desde a versão 1.0
 
