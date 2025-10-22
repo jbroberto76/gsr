@@ -25,10 +25,9 @@ exportFilename: gsr_aula6_fluxo
 # Agenda 
 
 1. Estrutura
-2. Cifras de Bloco x Cifras de Fluxo
-3. Cifras Típicas
-4. Aplicações
-5. Vulnerabilidades
+2. Cifras Típicas
+3. Aplicações
+4. Vulnerabilidades
 
 ---
 layout: section
@@ -169,16 +168,72 @@ layout: quote
 
 ---
 
+# `nonce`
+Propriedades
+
+- Unicidade
+- Utilização única
+- Imprevisibilidade
+
+---
+
+# `nonce`
+Aplicações
+
+- Prevenção a ataques de repetição
+    - Evita que mensagens de autenticação antigas sejam reutilizadas por atacantes
+- *Proof-of-Work*
+    - `nonce` são aplicados pelos mineradores para encontrar um *hash* que atenda a uma dificuldade específica
+- Cifras de fluxo
+
+---
+
+# UUID
+*Universally Unique Identifier*
+
+- RFC 4122
+- Identificador de 128 bits
+- Baixa probabilidade de colisão (repetição)
+
+---
+
+# UUID
+Versões
+
+- **UUIDv1** Baseado no *timestamp* e no endereço MAC da máquin (previsível)
+- **UUIDv4** Gerado usando números aleatórios ou pseudo-aleatórios. É a versão mais comum (imprevisível)
+- Outras versões (v3, v5) são baseadas em *hash* de namespaces e nomes
+
+---
+
+# `nonce` e UUID
+
+| Característica | **Nonce (Requisito)** | **UUID (Realidade)** | **É um Bom Nonce?** |
+| :--- | :--- | :--- | :--- |
+| **Unicidade** | **Obrigatória** | **Alta probabilidade** (depende da versão). UUIDs são projetados para serem únicos, mas colisões teoricamente são possíveis (embora muito raras). | **✅ Geralmente Sim** |
+| **Uso Único** | **Obrigatório** | O UUID em si não impõe isso. Cabe ao sistema/implementação garantir que um UUID específico não seja reutilizado como nonce. | **✅ Sim (se bem gerido)** |
+| **Imprevisibilidade**| **Obrigatória** | **Depende da Versão.** UUIDv1 é **previsível**. UUIDv4 é **imprevisível** (se usar CSPRNG). | **UUIDv4: ✅ Sim** <br> **UUIDv1: ❌ Não** |
+
+---
+
 # Salsa20
 
 - Utiliza um *nonce* de 64 bits como entrada junto com uma chave secreta
 
 $$
 \begin{aligned}
-ChaveSecreta + nonce &= FluxoDeChaves \\
+ChaveSecreta + nonce + Mix &= FluxoDeChaves \\
 FluxoDeChaves \oplus TextoClaro &= TextoCifrado
 \end{aligned}
 $$
+
+---
+
+# Salsa20
+Propriedades
+
+- Imprevisiblidade
+- Pseudoaleatoriedade
 
 ---
 
@@ -219,12 +274,26 @@ S[0] &= 0,\\S[1] &= 1,\\ ... ,\\ S[255] &= 255
 $$
 
 ---
+layout: image-right
+image: /rc4.png
+backgroundSize: contain
+---
 
 # RC4
 $T$
 
 - Se $K$ tem 256 bytes, um vetor temporário, $T$, é inicializado com o valor de $S$
 - Caso contrário, $K$ é replicado em $T$ até que tenha o mesmo tamanho de $S$
+
+---
+layout: image-right
+image: /rc4.png
+backgroundSize: contain
+---
+
+# RC4
+$T$
+
 - Resumo em pseudo-código:
 
 ```c {*}{class:'!children:text-xl'}
@@ -233,6 +302,10 @@ for i = 0 to 255
     T[i] = K[i mod keylen];
 ```
 
+---
+layout: image-right
+image: /rc4.png
+backgroundSize: contain
 ---
 
 # RC4
@@ -247,6 +320,10 @@ for i = 0 to 255 do
     Swap (S[i], S[j])
 ```
 
+---
+layout: image-right
+image: /rc4.png
+backgroundSize: contain
 ---
 
 # RC4
@@ -273,21 +350,66 @@ backgroundSize: contain
 # RC4
 Animação com State de 32 bytes
 
+---
+layout: quote
+---
+
+# RC4
+Fragilidades
+
+> O RC4 tem inicialização frágil. Os primeiros bytes do fluxo de chaves tem correlação com a chave de inicialização
+
+---
+
+# RC4
+WEP
+
+> A fragilidade do RC4 no WEP é um dos casos mais famosos de falhas de segurança na história. O WEP não apenas usava o RC4, mas o fazia de forma incorreta.
+
+---
+
+# WEP
+Fragilidades
+
+- Vetor de inicialização (IV) de apenas 24 bits e reutilizado frequentemente
+- Chave composta de IV + chave secreta
+- A partir dos dois primeiros bytes do fluxo de chave a chave poderia ser encontrada a partir da coleta de dados na rede sem fio
+
+---
+
+# WEP
+Fragilidades
+
+> Pesquisadores da AT&T e Rice *University*, juntamente com os desenvolvedores do `AirSnort` implementaram o algoritmo que explora essa vulnerabilidade e consegue derivar a chave após a coleta de cerca de 16 milhões de pacotes. Assim, surgiu o `AirSnort`. Baseada no mesmo algoritmo, tempos depois, foi desenvolvida outra ferramenta com o mesmo objetivo: o `WepCrack`
+
+---
+
+# RC4
+Resumo
+
+- Formalmente, nunca houve a quebra da cifra RC4
+- Porém, as falhas de implementação no WEP difundiram uma imagem negatia da cifra de fluxo
+- Atualmente, o RC4 é considerado **obsoleto**
+- Removido da TLS desde a versão 1.0
+
 
 ---
 
 # Referências
 
-- [OpenSSL](https://www.openssl.org/)
-- [OpenSSL Cookbook](https://www.feistyduck.com/library/openssl-cookbook/online/)
-- [PBKDF-2](https://cryptobook.nakov.com/mac-and-key-derivation/pbkdf2)
+- [NIST Terms `nonce`](https://csrc.nist.gov/glossary/term/nonce)
+- [UUID Generator](https://www.uuidgenerator.net/version4)
+- [RC4 no WEP](https://www.researchgate.net/publication/224981600_Analise_Critica_da_Implementacao_da_Cifra_RC4_no_Protocolo_WEP)
 
 ---
 
 # Referências
 
-- Capítulo 5. Criptografia e Segurança de Redes. William Stallings. 6ª. Edição. Editora Pearson. 
-  - **Seções 5.2, 5.3, 5.4 e 5.5.**
+- Capítulo 7. Criptografia e Segurança de Redes. William Stallings. 6ª. Edição. Editora Pearson. 
+  - **Seções 7.4 e 7.5.**
+
+- Capítulo 6. Criptografia e Segurança de Redes. William Stallings. 4ª. Edição. Editora Pearson. 
+  - **Seção 6.3.**
 
 ---
 src: /snippets/end.md
