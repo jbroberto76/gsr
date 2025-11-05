@@ -5,7 +5,7 @@ lineNumbers: true
 colorSchema: dark
 layout: image-right
 image: /mona-bernhardsen-1s9OyG6YkfI-unsplash.jpg
-title: Cifras de Fluxo
+title: Cifras de Assimétricas
 description: Gerência e Segurança de Redes
 author: José Roberto Bezerra
 exportFilename: gsr_aula7_cifras_assim
@@ -18,7 +18,7 @@ exportFilename: gsr_aula7_cifras_assim
 
 # Objetivo de Aprendizagem
 
-- Conhecer o conceito de cifras assimnétricas
+- Conhecer o conceito de cifras assimétricas
 
 ---
 
@@ -41,7 +41,7 @@ layout: quote
 
 # Objetivos
 
-> Tratar o problema de distribuição de chaves para criptografia simétrica
+> Tratar o problema de distribuição de chaves na criptografia simétrica
 
 > Criar um método para garantir que ambas as partes de uma comunicação, Emissor e Receptor, tenham certeza das respectivas identidades
 
@@ -72,12 +72,12 @@ Elementos
 ---
 
 # Criptosistemas de Chave Pública
-Etapas
+Etapas (encriptação com chave pública)
 
 1. Cada usuário gera um par de chaves para criptografia/decriptografia
-2. Cada usuário coloca uma das chaves num repositório publicamente acessível
+2. Cada usuário coloca uma das chaves (a pública) num repositório publicamente acessível
 3. Se Bob deseja enviar mensagem para Alice, Bob criptografa a mensagem usando a chave pública de Alice
-4. Quando Alice recebe a mensagem, ela a decriptografa usando sua chave privada. Nenhum outro destinatário é capaz de decriptografar, pois não tem acesso a chave privada
+4. Quando Alice recebe a mensagem, ela a decriptografa usando sua chave privada. Nenhum outro destinatário é capaz de decriptografar, pois não tem acesso a chave privada (confidencialidade é garantida)
 
 ---
 image: /criptog_chave_pub.png
@@ -86,10 +86,21 @@ backgroundSize: contain
 ---
 
 ---
+
+# Criptosistemas de Chave Pública
+Etapas (encriptação com chave privada)
+
+1. Cada usuário gera um par de chaves para criptografia/decriptografia
+2. Cada usuário coloca uma das chaves (a pública) num repositório publicamente acessível
+3. Bob utiliza sua chave privada para encriptar a mensagem e enviar para Alice
+4. Quando Alice recebe a mensagem, ela a decriptografa usando a chave pública de Bob, a única capaz de realizar essa tarefa. Não há confidencialidade. É possível garantir a autenticidade.
+
+---
 image: /criptog_chave_priv.png
 layout: image
 backgroundSize: contain
 ---
+
 
 
 ---
@@ -100,7 +111,7 @@ layout: two-cols-header
 
 :: left ::
 
-- Chave única para cirptografia e decriptografia
+- Chave única para criptografia e decriptografia
 - Compartilhamento de chave
 - Chave deve permanecer secreta
 - O conhecimento do algoritmo e amostras de texto cifrado não deve ser suficiente para determinar a chave
@@ -146,7 +157,8 @@ backgroundSize: contain
 # Aplicações de CS
 Criptografia/decriptografia
 
-- 
+- A mensagem $X$ apenas pode ser decriptografada pelo par da chave $PU_b$, a chave $PR_b$
+- A chave $PR_b$ é secreta e de conhecimento apenas de B, logo a confidencialidade é garantida
 
 ---
 layout: image-right
@@ -168,9 +180,8 @@ backgroundSize: contain
 # Aplicações de CS
 Criptografia/decriptografia
 
-- 
-
-
+- A mensagem $X$ apenas pode ser decriptografada pela chave $PU_b$, porém essa chave não é secreta. É de conhecimento de todos, logo a confidencialidade não é garantida.
+- A autenticidade pode ser garantida nesse esquema
 
 ---
 layout: image-right
@@ -184,10 +195,6 @@ Criptografia/decriptografia
 > O esquema mostrado garante confidencialidade? E a autenticidade?
 
 ---
-
-
-
----
 layout: image-right
 image: /crip_decrip_3.png
 backgroundSize: contain
@@ -196,21 +203,107 @@ backgroundSize: contain
 # Aplicações de CS
 Criptografia/decriptografia
 
-- 
+- Ambas as propriedades são garantidas nesse esquema, confidencialidade e autenticidade.
 
+---
+layout: quote
 ---
 
 # Aplicações de CS
 Assinatura digital
+
+> Garante a autenticidade, autoria ou identificação das partes envolvidas
+
+---
+image: https://www.diegomacedo.com.br/assinatura-e-certificacao-digital/
+layout: image-right
+backgroundSize: contain
+---
+
+# Aplicações de CS
+Assinatura digital
+
+- Elementos
+    - Par de chaves
+    - Algoritmo criptográfico
+    - Texto claro (mensagem)
+    - Texto cifrado
+    - Função de *hash*
+
+---
+image: https://i0.wp.com/www.diegomacedo.com.br/wp-content/uploads/2012/03/Autenticidade.png?w=744&ssl=1
+layout: image-right
+backgroundSize: contain
+---
+
+# Aplicações de CS
+Assinatura digital
+
+> A assinatura digital isoladamente não garante a confidencialidade da mensagem
+
+---
+
+# Certificados Digitais
+
+> O certificado digital é um documento eletrônico assinado digitalmente que tem a função de associar uma pessoa, instituição, equipamento a uma chave pública. As informações públicas contidas num certificado digital são o que possibilita colocá-lo em repositórios públicos.
+
+---
+
+# Certificados Digitais
+ICP Brasil
+
+> A Infraestrutura de Chaves Públicas Brasileira (ICP-Brasil) é uma cadeia hierárquica de confiança que viabiliza a emissão de certificados digitais para a identificação virtual do cidadão.
+
+---
+
+# ICP Brasil
+Estrutura
+
+[Instituto Nacional de Tecnologia da Informação](https://estrutura.iti.gov.br/)
+
+---
+layout: quote
+---
+
+# Aplicações de CS
+Funções de *hash*
+
+> São funções matemáticas que recebem uma entrada qualquer tamanho e transformam em um sequência de caracteres de tamanho fixo
+
+---
+
+# Funções de *Hash*
+Algorítmos típicos
+
+- MD5 (*Message Digest 5*), 128 bits, obsoleto
+- SHA-1 (*Secure Hash Algorithm*), 160 bits, obsoleto
+- SHA-2 ou SHA-256, 256 bits
+- SHA-3 variante do SHA-2
+
+---
+image: https://media.kasperskydaily.com/wp-content/uploads/sites/94/2014/04/06143603/HASH.png
+layout: image
+backgroundSize: contain
+---
 
 ---
 
 # Aplicações de CS
 Troca de chaves
 
+> *Key Exchange* é o processo que permite que duas partes estabeleçam uma chave secreta compartilhada sem a necessidade de transmiti-la diretamente
+
 ---
 
-# Criptorgrafia Assimétrica
+# Troca de chaves
+Principais algorítmos
+
+- *Diffie-Hellman*
+- RSA
+
+---
+
+# Criptografia Assimétrica
 *Diffie-Hellman*
 
 > *Whitifield Diffie* e *Martin Hellman* postularam um sistema criptográfico baseado em duas chaves em 1976 e estabeleceram as condições que um algoritmo para implementar esse sistema deveria atender.
@@ -272,6 +365,8 @@ $$
     - Para qualquer tamanho de chave assimétrica, o ataque é reduzido a um ataque de força bruta de 56 bits
 
 ---
+
+# Criptoanálise de Chave Pública
 
 > Depois do artigo pioneiro de *Diffie* e *Hellman* (1976) iniciou-se uma corrida para criar um algoritmo que atendesse aos requisitos proposto pelos autores
 
@@ -339,24 +434,18 @@ $$
 
 ---
 
+# Referências
 
-
+- [O que é criptografia assimétrica](https://www.ibm.com/br-pt/think/topics/asymmetric-encryption)
+- [Obter certificado digital](https://www.gov.br/pt-br/servicos/obter-certificacao-digital)
 
 ---
 
 # Referências
 
-- [NIST Terms `nonce`](https://csrc.nist.gov/glossary/term/nonce)
-- [UUID Generator](https://www.uuidgenerator.net/version4)
-- [RC4 no WEP](https://www.researchgate.net/publication/224981600_Analise_Critica_da_Implementacao_da_Cifra_RC4_no_Protocolo_WEP)
+- Capítulo 9. Criptografia e Segurança de Redes. William Stallings. 6ª. Edição. Editora Pearson.
 
----
-
-# Referências
-
-- Capítulo 7. Criptografia e Segurança de Redes. William Stallings. 6ª. Edição. Editora Pearson. **Capítulo 9**
-
-- Capítulo 6. Criptografia e Segurança de Redes. William Stallings. 4ª. Edição. Editora Pearson. **Capítulo 9**
+- Capítulo 9. Criptografia e Segurança de Redes. William Stallings. 4ª. Edição. Editora Pearson.
 
 ---
 src: /snippets/end.md
