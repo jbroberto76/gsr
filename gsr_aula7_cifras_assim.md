@@ -443,9 +443,9 @@ $$
 
 # Referências
 
-- Capítulo 9. Criptografia e Segurança de Redes. William Stallings. 6ª. Edição. Editora Pearson.
+- Capítulo 9. Criptografia e Segurança de Redes. *William Stallings*. 6ª. Edição. Editora Pearson.
 
-- Capítulo 9. Criptografia e Segurança de Redes. William Stallings. 4ª. Edição. Editora Pearson.
+- Capítulo 9. Criptografia e Segurança de Redes. *William Stallings*. 4ª. Edição. Editora Pearson.
 
 ---
 src: /snippets/end.md
