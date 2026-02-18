@@ -451,13 +451,6 @@ $$
 ---
 
 # RSA
-Algoritmo
-
-
-
----
-
-# RSA
 Abordagem dos ataques
 
 - Força bruta
