@@ -1,10 +1,9 @@
 ---
 layout: image-right
 transition: fade
-image: /img/mona-bernhardsen-1s9OyG6YkfI-unsplash.jpg
+image: /cover.jpg
 backgroundSize: contain
---- 
-
+---
 # {{ $slidev.configs.author }}
 
 

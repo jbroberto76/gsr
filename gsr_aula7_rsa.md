@@ -49,11 +49,41 @@ layout: quote
 
 # Algoritmos
 
-> Diversos algoritmos de criptografia assimétrica podem ser aplicados. Os principais são:
+> Diversos algoritmos de criptografia assimétrica podem ser aplicados em situações distintas. Os principais são:
 - RSA
 - *Diffie-Hellman*
 - Curva elíptica
 - DSS
+
+---
+layout: quote
+---
+
+# Concepções Incorretas
+CA é mais segura
+
+<v-clicks>
+
+> A criptografia assimétrica é mais segura contra criptoanálise do que a criptografia simétrica.
+
+A segurança dos sistemas criptográficos está relacionada ao tamanho de chaves e o esforço computacional envolvido na quebra de cifras
+
+</v-clicks>
+
+---
+layout: quote
+---
+
+# Concepções Incorretas
+Hoje se utiliza apenas CA
+
+<v-clicks>
+
+> A criptografia assimétrica é uma técnica de uso geral que tornou a criptografia simétrica obsoleta.
+
+Na verdade, a CA acrescenta uma grande sobrecarga computacional abrindo espaço para CS. Logo, ambas se complementam.
+
+</v-clicks>
 
 ---
 layout: section
@@ -74,10 +104,10 @@ Princípios
 # Criptosistemas de Chave Pública
 Elementos
 
-- Texto claro
-- Algoritmos de criptografia/decriptografia
-- Par de chaves assimétricas (pública/privada)
-- Texto cifrado
+1. Texto claro
+2. Algoritmos de criptografia/decriptografia
+3. Par de chaves assimétricas (pública/privada)
+4. Texto cifrado
 
 ---
 
@@ -417,6 +447,13 @@ $$
     - Chave de 1024 bits, blocos de até 117 bytes
     - Chave de 2048 bits, blocos de até 245 bytes
     - Chave de 4096 bits, blocos de até 501 bytes
+
+---
+
+# RSA
+Algoritmo
+
+
 
 ---
 
