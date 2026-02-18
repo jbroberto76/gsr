@@ -10,11 +10,16 @@ Código fonte das aulas de Gerência e Segurança de Redes (GSR), IFCE, Campus F
 - Material de apoio
 - Avaliação
 
-### Aula 1
-*Security Operation Center*
+### Aula 1 - *Security Operation Center*
 
-### Aula 2
-Conceitos de Segurança
+Objetivo de Aprendizagem
+- 
+
+Agenda
+- Some
+
+
+### Aula 2 - Conceitos de Segurança
 
 Objetivo de Aprendizagem 
 - Conhecer conceitos básicos de segurança da informação
@@ -31,14 +36,44 @@ Agenda
 - Técnicas de transposição
 - Máquinas de rotor
 
-### Aula 4
-Dispositivos de Segurança de Redes
+### Aula 4 - DES
+Objetivo de Aprendizagem
 
-### Aula 5
-DES
+Agenda
+- 1
 
-## Aula 6
-Atacantes e suas ferramentas
+
+### Aula 5 - AES
+
+### Aula 6 - Cifras de Fluxo
+
+### Aula 7 - RSA
+Objetivos de Aprendizagem
+- 
+
+Agenda
+
+### Aula 8 - *Diffie-Hellman*
+Objetivo de Aprendizagem
+- 
+
+Agenda
+- 
+
+### Aula 9 - Criptografia de Curva Elíptica
+Objetivo de Aprendizagem
+- 
+
+Agenda
+- 
+
+### Aula 10 - *Post Quantum Computing*
+Objetivo de Aprendizagem
+- 
+
+Agenda
+- 
+
 
 # Referências
 - Gerência e Segurança de Redes. William Stallings.
