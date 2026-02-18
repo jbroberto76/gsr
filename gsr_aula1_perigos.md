@@ -1,5 +1,6 @@
 ---
 theme: default
+transition: fade
 lineNumbers: true
 colorSchema: dark
 layout: image
@@ -15,9 +16,9 @@ Gerência e Segurança de Redes
 
 ---
 
-# Objetivo de Aprendizagem
-- Exemplos de ataques cibernéticos
-- Atores de ameaça
+# Objetivos de Aprendizagem
+- Conhecer exemplos de ataques cibernéticos
+- Conhecer os atores de ameaça
 - Tipos de informações
 - Ataques a sistemas de críticos
 

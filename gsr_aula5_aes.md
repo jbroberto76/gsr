@@ -4,7 +4,7 @@ transition: fade
 lineNumbers: true
 colorSchema: dark
 layout: image-right
-image: /mona-bernhardsen-1s9OyG6YkfI-unsplash.jpg
+image: /cover.jpg
 title: Advanced Encryption Standard
 exportFilename: gsr_aula5_aes
 author: José Roberto Bezerra
@@ -16,18 +16,18 @@ description: Gerência e Segurança de Redes
 
 ---
 
-# Objetivos de Aprendizagem
+# Objetivo de Aprendizagem
 
-- Conhecer o *Advanced Encryption Standard*
+- Conhecer o *Advanced Encryption Standard* e suas aplicações
 
 ---
 
 # Agenda 
 
-1. Características
-2. Estrutura geral
-3. Detalhamento
-2. OpenSSL
+- Características
+- Estrutura geral
+- Detalhamento
+- OpenSSL
 
 ---
 layout: section

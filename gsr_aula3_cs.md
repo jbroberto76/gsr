@@ -4,7 +4,7 @@ transition: fade
 lineNumbers: true
 colorSchema: dark
 layout: image-right
-image: /img/mona-bernhardsen-1s9OyG6YkfI-unsplash.jpg
+image: /cover.jpg
 title: Conceitos de Segurança da Informação
 exportFilename: gsr_aula3_cs
 author: José Roberto Bezerra
@@ -564,5 +564,5 @@ backgroundSize: contain
 - [Como a *Enigma* foi Quebrada?](https://www.youtube.com/watch?v=5w3zDa7bgLU)
 
 ---
-src: /src/end.md
+src: /snippets/end.md
 ---

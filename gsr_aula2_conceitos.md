@@ -4,7 +4,7 @@ transition: fade
 lineNumbers: true
 colorSchema: dark
 layout: image-right
-image: /img/mona-bernhardsen-1s9OyG6YkfI-unsplash.jpg
+image: /cover.jpg
 title: Conceitos de Segurança da Informação
 exportFilename: gsr_aula2_conceitos
 author: José Roberto Bezerra
@@ -23,12 +23,12 @@ Gerência e Segurança de Redes
 
 # Agenda 
 
-- Definição de segurança de computadores 
-- Objetivos 
-- Arquitetura OSI 
-- Tipos de ataques 
-- Serviços de Segurança 
-- Mecanismos de segurança da X.800  
+- Definição de segurança de computadores
+- Objetivos
+- Arquitetura OSI
+- Tipos de ataques
+- Serviços de Segurança
+- Mecanismos de segurança da X.800
 
 ---
 
@@ -531,5 +531,5 @@ backgroundSize: contain
 - [NIST drops controversial encryption algorithm](https://fedscoop.com/nist-drops-controversial-encryption-algorithm/)
 
 ---
-src: /src/end.md
+src: /snippets/end.md
 --- 

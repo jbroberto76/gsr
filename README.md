@@ -24,6 +24,14 @@ Agenda
 Objetivo de Aprendizagem 
 - Conhecer conceitos básicos de segurança da informação
 
+Agenda
+- Definição de segurança de computadores
+- Objetivos
+- Arquitetura OSI
+- Tipos de ataques
+- Serviços de Segurança
+- Mecanismos de segurança da X.800
+
 ### Aula 3 - Cifras Simétricas
 
 Objetivos de Aprendizagem 
@@ -37,21 +45,47 @@ Agenda
 - Máquinas de rotor
 
 ### Aula 4 - DES
-Objetivo de Aprendizagem
 
-Agenda
-- 1
+Objetivos de Aprendizagem 
+- Distinguir cifras de bloco e de fluxo
+- Conhecer o *Data Encryption Standard*
 
+Agenda 
+- Cifras de fluxo e de bloco
+- Cifra de Feistel
+- DES
+- Modos de Operação
+- OpenSSL
 
 ### Aula 5 - AES
+Objetivo de Aprendizagem
+- Conhecer o *Advanced Encryption Standard* e suas aplicações
+
+Agenda 
+- Características
+- Estrutura geral
+- Detalhamento
+- OpenSSL
 
 ### Aula 6 - Cifras de Fluxo
+Objetivo de Aprendizagem
+- Conhecer o conceito de cifra de fluxo e suas aplicações
+
+Agenda 
+- Estrutura
+- Cifras típicas
+- Aplicações
+- Vulnerabilidades
 
 ### Aula 7 - RSA
-Objetivos de Aprendizagem
-- 
+Objetivo de Aprendizagem
+- Conhecer o conceito de cifras assimétricas e suas aplicações
 
 Agenda
+- Por que usar cifras assimétricas?
+- Princípios e elementos
+- Aplicações
+- Vulnerabilidades
 
 ### Aula 8 - *Diffie-Hellman*
 Objetivo de Aprendizagem

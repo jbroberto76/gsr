@@ -4,7 +4,7 @@ transition: fade
 lineNumbers: true
 colorSchema: dark
 layout: image-right
-image: /mona-bernhardsen-1s9OyG6YkfI-unsplash.jpg
+image: /cover.jpg
 title: Cifras de Fluxo
 description: Gerência e Segurança de Redes
 author: José Roberto Bezerra
@@ -18,7 +18,7 @@ exportFilename: gsr_aula6_fluxo
 
 # Objetivo de Aprendizagem
 
-- Conhecer o conceito de cifra de fluxo
+- Conhecer o conceito de cifra de fluxo e suas aplicações
 
 ---
 

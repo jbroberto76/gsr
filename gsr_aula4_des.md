@@ -4,7 +4,7 @@ transition: fade
 lineNumbers: true
 colorSchema: dark
 layout: image-right
-image: /img/mona-bernhardsen-1s9OyG6YkfI-unsplash.jpg
+image: /cover.jpg
 title: Data Encryption Standard
 exportFilename: gsr_aula4_des
 author: José Roberto Bezerra

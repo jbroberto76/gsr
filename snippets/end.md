@@ -22,7 +22,6 @@ backgroundSize: contain
 
 <PoweredBySlidev /><br>
 
-##### Foto da capa by <a href="https://unsplash.com/pt-br/@maxxna?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Mona Bernhardsen</a> na <a href="https://unsplash.com/pt-br/fotografias/um-barco-flutuando-em-cima-de-um-grande-corpo-de-agua-1s9OyG6YkfI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+##### Cover by <a href="https://unsplash.com/pt-br/@hello_kseniia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kseniia Lobko</a> from <a href="https://unsplash.com/pt-br/fotografias/cadeia-montanhosa-nevada-sob-um-ceu-crepuscular-azul-escuro-YHKVnvCAU30?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-</div>
-      
+</div>      

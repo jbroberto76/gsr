@@ -4,11 +4,11 @@ transition: fade
 lineNumbers: true
 colorSchema: dark
 layout: image-right
-image: /mona-bernhardsen-1s9OyG6YkfI-unsplash.jpg
-title: Cifras de Assimétricas
+image: /cover.jpg
+title: Cifras Assimétricas e RSA
 description: Gerência e Segurança de Redes
 author: José Roberto Bezerra
-exportFilename: gsr_aula7_cifras_assim
+exportFilename: gsr_aula7_rsa
 ---
 
 # {{ $slidev.configs.title }}
@@ -18,7 +18,7 @@ exportFilename: gsr_aula7_cifras_assim
 
 # Objetivo de Aprendizagem
 
-- Conhecer o conceito de cifras assimétricas
+- Conhecer o conceito de cifras assimétricas e suas aplicações
 
 ---
 
@@ -44,6 +44,16 @@ layout: quote
 > Tratar o problema de distribuição de chaves na criptografia simétrica
 
 > Criar um método para garantir que ambas as partes de uma comunicação, Emissor e Receptor, tenham certeza das respectivas identidades
+
+---
+
+# Algoritmos
+
+> Diversos algoritmos de criptografia assimétrica podem ser aplicados. Os principais são:
+- RSA
+- *Diffie-Hellman*
+- Curva elíptica
+- DSS
 
 ---
 layout: section
@@ -131,16 +141,29 @@ layout: section
 
 ---
 
-# Aplicações de CS
+# Aplicações de CA
 
 - Criptografia/Decriptografia
 - Assinatura digital
 - Troca de chaves
 
 ---
+
+# Algoritmos Típicos
+
+| **Algoritmo**    | **Enc/Dec** | **Assinatura Digital** | **Troca de Chaves** |
+|------------------|-------------|------------------------|---------------------|
+| RSA              |  sim        |  sim                   | sim                 |
+| Curva Elíptica   |  sim        |  sim                   | sim                 |
+| *Diffie-Hellman* |  não        |  não                   | sim                 |
+| DSS              |  não        |  sim                   | não                 |
+
+---
 layout: image-right
 image: /crip_decrip_1.png
 backgroundSize: contain
+---
+
 ---
 
 # Aplicações de CS
