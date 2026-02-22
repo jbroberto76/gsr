@@ -5,10 +5,10 @@ lineNumbers: true
 colorSchema: dark
 layout: image-right
 image: /cover.jpg
-title: Conceitos de Segurança da Informação
-exportFilename: gsr_aula3_cs
 author: José Roberto Bezerra
 description: Gerência e Segurança de Redes
+title: Conceitos de Segurança da Informação
+exportFilename: gsr_aula3_cs
 ---
 
 # {{ $slidev.configs.title }}
