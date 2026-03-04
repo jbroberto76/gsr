@@ -20,7 +20,7 @@ title: Porque Segurança Cibernética
 - Perceber a necessidade da segurança cibernética
 - Conhecer exemplos de ataques cibernéticos
 - Conhecer os atores de ameaça e seus objetivos
-- Conhecer os ataques a sistemas de críticos
+- Conhecer ataques a sistemas de críticos
 
 ---
 layout: section
@@ -114,8 +114,7 @@ Exploração de Vulnerabilidade
 # Quem nos ataca?
 
 - *Hackers*
-- Invasores
-- Atacantes
+- Invasores, Atacantes
 - Atores estatais
 - Grupos criminosos
 
@@ -254,10 +253,6 @@ Setores
 - **Consequência** Felizmente, um operador percebeu a mudança e reverteu a ação antes que a água tratada fosse distribuída para a população.
 
 > Sistemas de controle industrial (ICS/SCADA) legados são vulneráveis e um ataque bem-sucedido poderia ter envenenado milhares de pessoas
-
----
-
-<Youtube id="EkyobshJ4Z" />
 
 ---
 
