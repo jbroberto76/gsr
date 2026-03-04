@@ -3,8 +3,8 @@ theme: default
 transition: fade
 lineNumbers: true
 colorSchema: dark
-layout: image-right
-image: /coverg.jpg
+layout: image
+image: /cover.jpg
 author: José Roberto Bezerra
 description: Gerência e Segurança de Redes
 title: Conceitos de Segurança da Informação
@@ -50,7 +50,7 @@ exportFilename: gsr_aula2_conceitos
 ---
 
 # Objetivos
-*Cyber security*
+*Cybersecurity*
 
 - Confidencialidade (*Confidentiality*) 
 - Integridade (*Integrity*)
@@ -77,6 +77,8 @@ layout: quote
 > A perda de confidencialidade seria a divulgação não autorizada de informação de qualquer natureza a terceiros
 
 ---
+layout: quote
+---
 
 # Confidencialidade x Privacidade
 
@@ -88,6 +90,8 @@ o acesso unicamente às pessoas autorizadas
 > Privacidade assegura que os **indivíduos** controlem ou influenciem quais informações podem ser obtidas e armazenadas e quem pode ter acesso 
 
 ---
+layout: quote
+---
 
 # Integridade
 
@@ -98,11 +102,15 @@ o acesso unicamente às pessoas autorizadas
 > Integridade assegura que um sistema execute suas funcionalidades de forma ilesa, livre de manipulações intencionais de terceiros
 
 ---
+layout: quote
+---
 
 # Integridade
 
 > Prevenção contra a modificação ou destruição imprópria de informação, incluindo irretratabilidade e autenticidade. Perda de integridade seria a modificação ou destruição não autorizada da informação
 
+---
+layout: quote
 ---
 
 # Como garantir integridade?
@@ -133,7 +141,7 @@ layout: quote
 
 # Disponibilidade
 
-> Integridade de dados assegura que os sistemas e dados operem prontamente e seus serviços não fiquem indisponíveis para usuários autorizados  
+> Disponibilidade de dados assegura que os sistemas e dados operem prontamente e seus serviços não fiquem indisponíveis para usuários autorizados  
 
 ---
 layout: quote
@@ -471,12 +479,16 @@ Codificação, criptografia ou *encipherment*
 > Aplicação de algoritmos matemáticos para transformar os dados para um formato que não seja prontamente inteligível. A transformação e subsequente recuperação dos dados depende de um algoritmo com zero ou mais chaves de encriptação
 
 ---
+layout: quote
+---
 
 # Mecanismos de Segurança
 ASSINATURA DIGITAL 
 
 > Dados anexados a uma unidade de dados que permite que um destinatário prove sua origem e integridade protegendo-se contra falsificação.  
 
+---
+layout: quote
 ---
 
 # Mecanismos de Segurança
@@ -485,12 +497,16 @@ CONTROLE DE ACESSO
 > Conjunto de mecanismos que impõe direitos de acesso aos recursos  
 
 ---
+layout: quote
+---
 
 # Mecanismos de Segurança 
 INTEGRIDADE DOS DADOS 
 
 > Conjunto de mecanismos aplicados para garantir a integridade de uma unidade de dados ou fluxo unidades de dados.  
 
+---
+layout: quote
 ---
 
 # Mecanismos de Segurança
@@ -499,12 +515,16 @@ TROCA DE AUTENTICAÇÃO
 > Conjunto de mecanismos aplicados para garantir a identidade de uma entidade por meio de troca de informações.  
 
 ---
+layout: quote
+---
 
 # Mecanismos de Segurança
 PREENCHIMENTO DE TRÁFEGO 
 
 > A inserção de bits nas lacunas de um fluxo de dados para frustrar as tentativas de análise de tráfego.  
 
+---
+layout: quote
 ---
 
 # Mecanismos de Segurança
@@ -513,6 +533,8 @@ CONTROLE DE ROTEAMENTO
 > Permite a seleção de determinadas rotas fisicamente seguras para certos dados e mudanças de roteamento, sobretudo quando uma brecha de segurança é suspeitada
 
 ---
+layout: quote
+---
 
 # Mecanismos de Segurança
 NOTARIZAÇÃO
@@ -520,14 +542,20 @@ NOTARIZAÇÃO
 > Uso de um terceiro confiável para garantir determinadas propriedades de uma troca de dados
 
 ---
-image: https://www.topleituras.com/livros/criptografia-seguranca-redes-principios-praticas-36d7-capa.webp
+layout: fact
+---
+
+# Perguntas
+
+---
+image: https://www.ingebook.com/ib/pimg/Ingebook/00100_0000008751_18205.JPG
 layout: image-right
 backgroundSize: contain
 ---
 
 # Referências 
 
-- Capítulo 1 . Criptografia e Segurança de Redes. William Stallings. 4a. Ed. Editora Pearson.
+- [Capítulo 1](https://plataforma.bvirtual.com.br/Leitor/Publicacao/22446/pdf/24). Criptografia e Segurança de Redes. *William Stallings*. 6a. Ed. Editora Pearson.
 - [NIST](https://www.nist.gov/cybersecurity)
 - [NIST drops controversial encryption algorithm](https://fedscoop.com/nist-drops-controversial-encryption-algorithm/)
 
