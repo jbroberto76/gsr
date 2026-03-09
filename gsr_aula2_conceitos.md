@@ -315,8 +315,21 @@ Categorias
 
 # Autenticação 
 
-- **Autenticação de entidade pareada**, usada em associação com uma conexão lógica para fornecer confiança na identidade das entidades conectadas 
-- **Autenticação da origem de dados**, em uma transferência sem conexão, oferece certeza de que a origem dos dados recebidos é conforme alegada.  
+> **Autenticação de entidade pareada**, usada em associação com uma conexão lógica para fornecer confiança na identidade das entidades conectadas.
+
+Exemplos:
+- Comunicação HTTPs entre navegador e servidor
+- Comunicação Bluetooth
+
+---
+
+# Autenticação 
+
+> **Autenticação da origem de dados**, em uma transferência sem conexão, oferece certeza de que a origem dos dados recebidos é conforme alegada.
+
+Exemplos:
+- Assinaturas digitais em documentos
+- Atualizações de *software* com *checksum*
 
 ---
 
