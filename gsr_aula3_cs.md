@@ -129,6 +129,13 @@ backgroundSize: contain
 | **Chosen-Plaintext Attack** | Pode escolher textos claros e obter seus textos cifrados | Descobrir a chave usada para cifrar | Baixa-Média |
 | **Chosen-Ciphertext Attack** | Pode escolher textos cifrados e obter seus textos claros | Determinar a chave de decifragem | Baixa-Média |
 | **Adaptive Chosen-Plaintext** | Pode adaptar escolhas baseado em resultados anteriores | Obter informações sobre a chave eficientemente | Baixa |
+
+---
+
+# Tipos de Ataques Criptoanalíticos
+
+| Tipo de Ataque | Conhecido pelo Criptoanalista | Objetivo | Dificuldade |
+|----------------|------------------------------|----------|-------------|
 | **Related-Key Attack** | Conhece cifras com chaves relacionadas | Explorar relações matemáticas entre chaves | Variável |
 | **Side-Channel Attack** | Informações físicas (tempo, consumo de energia) | Extrair a chave através de vazamentos | Dependente da implementação |
 | **Brute-Force Attack** | Algoritmo de cifra (às vezes texto cifrado) | Testar todas as chaves possíveis | Muito Alta |
@@ -142,7 +149,7 @@ backgroundSize: contain
 - Criptoanalista possui apenas as mensagens cifradas
 - **Exemplo**: Análise de tráfego de rede criptografado
 
-Adicionar figura MITM
+<!-- Adicionar figura MITM -->
 
 ---
 
@@ -623,7 +630,6 @@ image: /rotores.png
 backgroundSize: contain
 ---
 
-
 ---
 
 # Máquinas de Rotor
@@ -634,25 +640,18 @@ backgroundSize: contain
 - *Enigma* e *Purple* foram máquinas usadas na segunda guerra
 
 ---
-layout: quote
----
 
 # Como funciona a *Enigma*?
 
+<br><br><br>
+
 <Youtube id="5w3zDa7bgLU" />
 
-<!-- [Como funciona a *Enigma*?](https://www.youtube.com/watch?v=5w3zDa7bgLU) -->
-
-
----
-layout: quote
 ---
 
 # Como a *Enigma* foi Quebrada?
-
+<br><br><br>
 <Youtube id="E0YX8BC4RLo" />
-
-<!-- [Como a *Enigma* foi Quebrada?](https://www.youtube.com/watch?v=5w3zDa7bgLU) -->
 
 ---
 layout: fact
@@ -664,9 +663,9 @@ layout: fact
 
 # Referências 
 
-- **Capítulo 2**. Criptografia e Segurança de Redes. William Stallings. 6a. Ed. Editora Pearson.
+- [Capítulo 2](https://plataforma.bvirtual.com.br/Leitor/Publicacao/22446/pdf/24). Criptografia e Segurança de Redes. *William Stallings*. 6a. Ed. Editora Pearson.
 - [Como funciona a *Enigma*?](https://www.youtube.com/watch?v=5w3zDa7bgLU)
-- [Como a *Enigma* foi Quebrada?](https://www.youtube.com/watch?v=5w3zDa7bgLU)
+- [Como a *Enigma* foi Quebrada?](https://www.youtube.com/watch?v=E0YX8BC4RL)
 
 ---
 src: /snippets/end.md
