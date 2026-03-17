@@ -3,11 +3,11 @@ theme: default
 transition: fade
 lineNumbers: true
 colorSchema: dark
-layout: image-right
+layout: image
 image: /cover.jpg
 author: José Roberto Bezerra
 description: Gerência e Segurança de Redes
-title: Conceitos de Segurança da Informação
+title: Cifras Simétricas
 exportFilename: gsr_aula3_cs
 ---
 
@@ -25,7 +25,7 @@ exportFilename: gsr_aula3_cs
 
 # Agenda 
 
-- Modelo
+- Modelo de cifra simétrica
 - Técnicas de substituição
 - Técnicas de transposição
 - Máquinas de rotor
@@ -34,12 +34,12 @@ exportFilename: gsr_aula3_cs
 layout: section
 ---
 
-# Modelo de Cifra simétrica
+# Modelo de Cifra Simétrica
 
 
 ---
 layout: image
-image: /img/modelo_sc.png
+image: /modelo_sc.png
 backgroundSize: contain
 ---
 
@@ -58,7 +58,7 @@ Elementos
 
 ---
 
-# Requisitos Uso Seguro
+# Requisitos para Uso Seguro
 Primeiro
 
 > Um oponente deverá ser incapaz de decifrar o texto
@@ -68,17 +68,45 @@ claros
 
 ---
 
-# Requisitos Uso Seguro
-Segundo
+# Requisitos para Uso Seguro
+Primeiro
 
-> Emissor e Receptor precisam ter obtido a chave
-secreta de forma segura. Se um oponente descobrir
-a chave e o algoritmo a comunicação está
-comprometida
+$$
+\begin{aligned}
+Y_1 &= E(K, X_1)\\
+Y_2 &= E(K, X_2)\\
+&\vdots\\
+Y_n &= E(K, X_n)\\
+\end{aligned}
+$$
+
+> Mesmo conhecendo pares de texto plano ($X_?$) e texto cifrado ($Y_?$) não deve ser trivial encontrar $E$ e/ou $K$ 
 
 ---
 
-# Requisitos Uso Seguro
+# Requisitos para Uso Seguro
+Exemplo
+
+| $i$ | $X_i$      | $Y_i$                  |
+|-----|------------|------------------------|
+| 1   | net        | SpAODRnH66M            |
+| 2   | network    | TdSHg56M52w            |
+| 3   | networking | qifSKVHOpG/aE5kl0FvYTg |
+
+> $K = ?$ ou $E = ?$
+
+---
+
+# Requisitos para Uso Seguro
+Segundo
+
+<br><br><br>
+
+> Emissor e Receptor precisam ter obtido a chave secreta de forma segura. Se um oponente descobrir a chave e o algoritmo a comunicação está comprometida
+
+---
+
+# Requisitos para Uso Seguro
 Observação
 
 > O sigilo do algoritmo de encriptação/decriptação
@@ -86,7 +114,7 @@ não é determinante para a segurança
 
 ---
 layout: image
-image: /img/modelo_sc2.png
+image: /modelo_sc2.png
 backgroundSize: contain
 ---
 
@@ -110,63 +138,65 @@ backgroundSize: contain
 ---
 
 # Ciphertext-Only Attack
-- **Cenário mais comum em interceptações passivas**
+- Cenário mais comum em interceptações passivas, ataques de reconhecimento
 - Criptoanalista possui apenas as mensagens cifradas
 - **Exemplo**: Análise de tráfego de rede criptografado
+
+Adicionar figura MITM
 
 ---
 
 # Known-Plaintext Attack
-- **Situação comum em protocolos estruturados**
-- Criptoanalista conhece alguns pares texto claro ↔ texto cifrado
+- Situação comum em protocolos estruturados
+- Criptoanalista conhece alguns pares texto claro / texto cifrado
 - **Exemplo**: Ataque a cifras que usam cabeçalhos padrão
 
 ---
 
 # Chosen-Plaintext Attack
-- **Cenário de ataque muito poderoso**
+- Cenário de ataque muito poderoso
 - Atacante pode escolher textos arbitrários para cifrar
 - **Exemplo**: Ataque a sistemas onde o atacante tem acesso temporário
 
 ---
 
 # Chosen-Ciphertext Attack
-- **Ataque similar ao chosen-plaintext, mas na decifragem**
+- Ataque similar ao chosen-plaintext, mas na decifragem
 - Atacante pode decifrar textos cifrados de sua escolha
 - **Exemplo**: Ataque a protocolos de autenticação
 
 ---
 
 # Adaptive Chosen-Plaintext
-- **Versão mais sofisticada do chosen-plaintext**
+- Versão mais sofisticada do chosen-plaintext
 - Escolhas são adaptadas baseadas nos resultados anteriores
 - **Exemplo**: Ataques diferenciais e lineares
 
 ---
 
 # Related-Key Attack
-- **Explora relações matemáticas entre chaves**
+- Explora relações matemáticas entre chaves
 - Criptoanalista conhece cifras com chaves relacionadas
 - **Exemplo**: Ataques a esquemas de derivação de chaves
 
 ---
 
 # Side-Channel Attack
-- **Explora implementações físicas, não a teoria matemática**
+- Explora implementações físicas, não a teoria matemática
 - Baseia-se em vazamentos de informação durante o processamento
 - **Exemplos**: Análise de tempo, consumo de energia, emissões eletromagnéticas
 
 ---
 
 # Brute-Force Attack
-- **Ataque por força bruta**
-- Testa exaustivamente todas as chaves possíveis
+- Ataque por força bruta
+- Visa testar exaustivamente todas as chaves possíveis
 - **Eficácia**: Dependente do tamanho da chave
 
 ---
 
 # Dictionary Attack
-- **Utiliza um dicionário de entradas prováveis**
+- Utiliza um dicionário de entradas prováveis
 - Eficaz quando o texto claro vem de um conjunto limitado
 - **Exemplo**: Ataque a senhas comuns
 
@@ -190,13 +220,6 @@ backgroundSize: contain
 
 ---
 
-# Encriptação Computacionalmente Segura
-
-1. Custo para quebrar a cifra ultrapassa o valor da informação encriptada
-2. Tempo exigido para quebrar a cifra supera o tempo de vida útil da informação
-
----
-
 # Classificação
 
 - Tipo
@@ -207,12 +230,58 @@ backgroundSize: contain
     - Bloco ou Fluxo
 
 ---
+layout: section
+---
+
+# Cifras de Substituição
+
+---
+layout: quote
+---
+
+# Encriptação Computacionalmente Segura
+
+> Em teoria uma encriptação (criptografia) segura seria aquela considerada inquebrável independente da capacidade computacional empregada
+
+> As implementações práticas atuais são consideradas impossíveis de quebrar em um tempo razoável.
+
+---
+
+# Encriptação Computacionalmente Segura
+Princípios
+
+<br><br><br>
+
+1. Custo para quebrar a cifra ultrapassa o valor da informação encriptada
+2. Tempo exigido para quebrar a cifra supera o tempo de vida útil da informação
+
+---
 
 # Ataque de Força Bruta
+
+- Ataque fundamentado em tentativa e erro
+- Normalmente empregado para quebra de senhas
+- Exemplos típicos: ataques de dicionários, *crendential stuffing*
+
+---
+layout: quote
+---
+
+# Ataque de Força Bruta
+*Crendential stuffing*
+
+> Ataque em que ferramentas de automação são usadas para aplicar listas de usuário/senha roubadas e ter acesso a alguma aplicação
+
+
+---
+
+# Ataque de Força Bruta
+Proteção
 
 - Metade das chaves precisa ser experimentada
 - Texto claro em idioma conhecido facilita a quebra da chave
 - Arquivos numéricos e/ou compactados dificultam a quebra da chave
+- Uso de autenticação multifator (MFA, *Multi Factor Authentication*)
 
 ---
 layout: quote
@@ -232,7 +301,7 @@ backgroundSize: contain
 
 ---
 layout: image-right
-image: /img/cifra_cesar2.png
+image: /cifra_cesar2.png
 backgroundSize: contain
 ---
 
@@ -240,7 +309,33 @@ backgroundSize: contain
 
 ---
 layout: image-right
-image: /img/criptoanalise.png
+image: /criptoanalise.png
+backgroundSize: contain
+---
+
+# Criptoanálise
+Cifra de César
+
+---
+layout: quote
+---
+
+# Criptoanálise
+
+> Ciência que se dedica a análise de sistemas criptográficos para decifrar as informações protegidas sem possuir a chave
+
+---
+layout: image-right
+image: /criptoanalise.png
+backgroundSize: contain
+---
+
+# Criptoanálise
+Cifra de César
+
+---
+layout: image-right
+image: /criptoanalise_linha3.png
 backgroundSize: contain
 ---
 
@@ -251,14 +346,13 @@ Cifra de César
 
 # Criptoanálise
 Cifra de César
-
-- Algoritmos conhecidos
 - Chave fraca
 - Mensagem em texto claro identificável
+- Algoritmo conhecido
 
 ---
 layout: image-right
-image: /img/zip.png
+image: /zip.png
 backgroundSize: contain
 ---
 
@@ -274,7 +368,7 @@ layout: quote
 
 # Cifras Monoalfabéticas
 
-> A cifra de César respeita a sequência do alfabeto cifrado criando 25 possibilidades de chave. As cifras monoalfabéticas trazem um aprimoramento substituindo cada letra por QUALQUER outra letra
+> A cifra de César respeita a sequência do alfabeto cifrado criando 25 possibilidades de chave. Já as cifras monoalfabéticas trazem um aprimoramento substituindo cada letra por QUALQUER outra letra
 
 $a \rightarrow Q\\$
 $b \rightarrow W\\$
@@ -285,7 +379,7 @@ $d \rightarrow R\\$
 
 # Cifras Monoalfabéticas
 
-- Chaves de cifras de substituição monoalfabéticas possuem $25!$ possibilidades (permutação)
+> Chaves de cifras de substituição monoalfabéticas possuem $25!$ possibilidades (permutação)
 
 $$
 \begin{aligned}
@@ -303,14 +397,14 @@ $$
 
 ---
 layout: image
-image: /img/texto_cifrado.png 
+image: /texto_cifrado.png 
 backgroundSize: contain
 ---
 
 # Exemplo de Texto Cifrado
 
 ---
-image: /img/stats.png
+image: /stats.png
 layout: image-right
 backgroundSize: contain
 ---
@@ -342,7 +436,7 @@ backgroundSize: contain
 
 ---
 layout: image
-image: /img/quatro_letras.png
+image: /quatro_letras.png
 backgroundSize: contain
 ---
 
@@ -351,7 +445,7 @@ A partir de 4 letras
 
 ---
 layout: image
-image: /img/texto_decifrado.png
+image: /texto_decifrado.png
 backgroundSize: contain
 ---
 
@@ -428,7 +522,7 @@ layout: quote
 
 ---
 layout: image-right
-image: /img/vigenere.png
+image: /vigenere.png
 backgroundSize: contain
 ---
 
@@ -442,7 +536,7 @@ backgroundSize: contain
 
 ---
 layout: image-right
-image: /img/vigenere.png
+image: /vigenere.png
 backgroundSize: contain
 ---
 
@@ -454,7 +548,7 @@ Fragilidades
 
 ---
 layout: image-right
-image: /img/otp.png
+image: /otp.png
 backgroundSize: contain
 ---
 
@@ -483,7 +577,7 @@ layout: section
 
 ---
 layout: image-right
-image: /img/railfence.png
+image: /railfence.png
 backgroundSize: contain
 ---
 
@@ -495,7 +589,7 @@ backgroundSize: contain
 
 ---
 layout: image-right
-image: /img/railfence2.png
+image: /railfence2.png
 backgroundSize: contain
 ---
 
@@ -525,7 +619,7 @@ layout: section
 
 ---
 layout: image
-image: /img/rotores.png
+image: /rotores.png
 backgroundSize: contain
 ---
 
@@ -540,26 +634,37 @@ backgroundSize: contain
 - *Enigma* e *Purple* foram máquinas usadas na segunda guerra
 
 ---
+layout: quote
+---
 
 # Como funciona a *Enigma*?
 
-<!-- <Youtube id="5w3zDa7bgLU" /> -->
+<Youtube id="5w3zDa7bgLU" />
 
-[Como funciona a *Enigma*?](https://www.youtube.com/watch?v=5w3zDa7bgLU)
+<!-- [Como funciona a *Enigma*?](https://www.youtube.com/watch?v=5w3zDa7bgLU) -->
 
 
+---
+layout: quote
 ---
 
 # Como a *Enigma* foi Quebrada?
 
-<!-- <Youtube id="E0YX8BC4RLo" /> -->
-[Como a *Enigma* foi Quebrada?](https://www.youtube.com/watch?v=5w3zDa7bgLU)
+<Youtube id="E0YX8BC4RLo" />
+
+<!-- [Como a *Enigma* foi Quebrada?](https://www.youtube.com/watch?v=5w3zDa7bgLU) -->
+
+---
+layout: fact
+---
+
+# Perguntas
 
 ---
 
 # Referências 
 
-- **Capítulo 2**  . Criptografia e Segurança de Redes. William Stallings. 4a. Ed. Editora Pearson.
+- **Capítulo 2**. Criptografia e Segurança de Redes. William Stallings. 6a. Ed. Editora Pearson.
 - [Como funciona a *Enigma*?](https://www.youtube.com/watch?v=5w3zDa7bgLU)
 - [Como a *Enigma* foi Quebrada?](https://www.youtube.com/watch?v=5w3zDa7bgLU)
 

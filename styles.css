@@ -11,8 +11,16 @@
       border-left: 4px solid #3ab9d5;
       margin: 2em 0;
     }
+
+    blockquote > p {
+      line-height: 1.25;
+    }
   }
 
   pre, code {
     --uno: select-text;
   }
+
+.slidev-code {
+  margin: 0rem 0.5rem;
+}
