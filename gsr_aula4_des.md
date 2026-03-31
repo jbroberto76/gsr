@@ -243,6 +243,7 @@ Fragilidades
 - Regra geral:
     - Tamanho do bloco: $n$
     - Tamanho da chave: $n \cdot 2^n$
+    - Para o exemplo de 4 bits é necessário uma chave de 4 bits x 16 linhas = 64 bits -->
 
 ---
 
