@@ -470,6 +470,12 @@ Parâmetros
 | Algoritmo de subchave e $F$ | Aumentam a dificuldade da criptoanálise |
 
 ---
+layout: center
+---
+
+<Youtube id="8l9xAvuGJFo" />
+
+---
 layout: section
 ---
 
@@ -480,10 +486,11 @@ layout: section
 # DES
 *Data Encription Standard*
 
-- Criptografia mais utilizada antes do AES (2001)
+- Desenvolvido pela IBM em 1975
 - Adotado pelo NIST em 1977
 - Reafirmado em 1994
 - Substituído pelo *Triple*$* DES em 1999
+- Criptografia mais utilizada antes do AES (2001)
 - *$*Triple* DES substituído pelo AES em 2001
 
 ---
@@ -492,8 +499,138 @@ layout: section
 Características
 
 - Blocos de dados de 64 bits
-- Chave de 56 bits
-- 16 rodadas
+- Chave de 64 bits com uso efetivo de 56 bits (8 bits de paridade)
+- 16 rodadas 
+
+---
+image: https://www.includehelp.com/cryptography/Images/des-1.jpg
+backgroundSize: contain
+layout: image-right
+---
+
+# DES
+Encriptação
+
+---
+image: https://scaler.com/topics/images/des-algorithm-initial-permutation-table.webp
+backgroundSize: contain
+layout: image-right
+---
+
+# DES
+*Initial permutation*
+
+- Reorganiza os 64 bits do bloco (permutação)
+
+---
+
+# DES
+Geração de Subchaves
+
+> Cada uma das 16 rodadas do DES demanda uma chave de rodada de 48 bits. Cada chave de rodada é gerada a partir da chave original de 64 bits.
+
+---
+image: https://scaler-topics-articles-md.s3.us-west-2.amazonaws.com/key-generation-in-des-algorithm.webp
+backgroundSize: contain
+layout: image-right
+---
+
+# DES
+Geração de Subchaves
+1. Os bits 8, 16, 24, 32, 40, 48, 56 e 64 são removidos (bits de paridade)
+2. A chave passa de 64 para 56 bits e sofre uma permutação resultando em PC-1 (*permuted choice*)
+
+---
+image: https://scaler.com/topics/images/des-algorithm-permutation-table.webp
+backgroundSize: contain
+layout: image-right
+---
+
+# DES
+Geração de Subchaves
+
+3. Os 56 bits de PC-1 sofrem um processo chamado *Compression Permutation* 
+4. PC-2 é gerado com 48 bits que é a chave da rodada
+6. Deslocamentos são realizados em PC-1 e PC-2 para gerar as 16 chaves subchaves de cada rodada
+
+---
+image: https://www.includehelp.com/cryptography/Images/des-1.jpg
+backgroundSize: contain
+layout: image-right
+---
+
+# DES
+Função de Rodada
+- *Expansion Permutation*
+- XOR
+- Substituição
+- Permutação
+
+---
+
+# Função de Rodada
+*Expansion Permutation*
+
+- O bloco de 64 bits é dividido ao meio $R0$ e $L0$
+- $R0$ e $L0$ tem 32 bits, cada
+- $R0$ é expandido para 48 bits
+- Efeito avalanche
+
+---
+image: https://scaler.com/topics/images/key-mixing-des-algorithm.webp
+backgroundSize: contain
+layout: image-right
+---
+
+# Função de Rodada
+XOR
+
+> A função XOR é aplicada bit a bit entre a chave de rodada e $R0$
+
+---
+image: https://scaler.com/topics/images/copy-of-s-boxes-des-algorithm.webp
+backgroundSize: contain
+layout: image-right
+---
+
+# Função de Rodada
+S-box
+
+> A substituição é usada para tornar os dados mais complexos, dificultando a decifragem. Oito tabelas pré-fabricadas (S-Boxes), são usadas para transformar cada entrada de 6 bits em uma saída de 4 bits.
+
+---
+image: https://scaler.com/topics/images/permutation-table-in-des.webp
+backgroundSize: contain
+layout: image-right
+---
+
+# Função de Rodada
+Permutação
+
+---
+
+# DES
+Vulnerabilidades
+
+- Tamanho de chave (56 bits) torna o DES vulnerável a ataques de força bruta
+    - [DES Challenges](https://en.wikipedia.org/wiki/DES_Challenges)
+    - Levou ao desenvolvimento do 3DES
+- Ataques de tempo
+- Criptoanálise diferencial e linear
+
+---
+layout: quote
+---
+
+# DES
+
+> DES e 3DES são algorítmos criptográficos considerados obsoletos e foram oficialmente substituídos pelo AES
+
+---
+layout: center
+---
+
+<Youtube id="lqrY5IJDATM" />
 
 ---
 layout: section
@@ -520,16 +657,15 @@ layout: quote
 
 ---
 layout: image-right
-image: https://www.jmunixusers.org/presentations/cryptography/images/block-ecb.png
+image: https://dz2cdn1.dzone.com/storage/temp/11913961-ecb.png
 backgroundSize: contain
 ---
 
 # ECB
 *Electronic Code Book*
 
-- O texto claro é dividido em blocos de 64 bits
 - Cada bloco é criptografado de forma independente com a mesma chave
-- Esta estratégia fragiliza a cifra, pois blocos idênticos de texto claro produzem blocos idênticos de texto cifrado
+- O ECB fragiliza a cifra, pois blocos idênticos de texto claro produzem blocos idênticos de texto cifrado
 - Cria padrões "visíveis" na cifra (ECB *Penguin*)
 
 ---
@@ -540,7 +676,7 @@ backgroundSize: contain
 
 ---
 layout: image-right
-image: https://www.jmunixusers.org/presentations/cryptography/images/block-cbc.png
+image: https://dz2cdn1.dzone.com/storage/temp/11913962-cbc.png
 backgroundSize: contain
 ---
 
@@ -672,9 +808,10 @@ layout: fact
 
 # Referências 
 - Criptografia e Segurança de Redes. *Stallings, W.* Capítulo 3. **Seções: 3.1 a 3.3.** 
+- [DES NIST](https://csrc.nist.gov/pubs/fips/46-3/final)
 - [O que é OpenSSL?](https://www.ssldragon.com/pt/blog/que-e-openssl/)
 - [SSL e TLS](https://www.cloudflare.com/pt-br/learning/ssl/what-is-ssl/)
 
 ---
-src: /src/end.md
+src: /snippets/end.md
 ---
