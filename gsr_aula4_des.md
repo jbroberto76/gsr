@@ -807,8 +807,9 @@ layout: fact
 ---
 
 # Referências 
-- Criptografia e Segurança de Redes. *Stallings, W.* Capítulo 3. **Seções: 3.1 a 3.3.** 
+- Criptografia e Segurança de Redes. *Stallings, W.* Capítulo 3.
 - [DES NIST](https://csrc.nist.gov/pubs/fips/46-3/final)
+- [DES Algorithm](https://www.scaler.com/topics/des-algorithm/)
 - [O que é OpenSSL?](https://www.ssldragon.com/pt/blog/que-e-openssl/)
 - [SSL e TLS](https://www.cloudflare.com/pt-br/learning/ssl/what-is-ssl/)
 
