@@ -64,11 +64,21 @@ Blocos
 - Ao longo da execução, o *State* vai sendo modificado até o estágio final se tornar o texto cifrado
 
 ---
+layout: image
+image: https://www.simplilearn.com/ice9/free_resources_article_thumb/state_array-aes_encryption.png
+backgroundSize: contain
+
+---
+
+---
 
 # Características AES
 Chaves
 
-- Versões com chaves de 128, 192 ou 256 bits (AES-128, AES-192 ou AES-256)
+- Versões com chaves de 128, 192 ou 256 bits
+  - AES-128
+  - AES-192
+  - AES-256
 - A chave também é vista como uma matriz quadrada de *bytes* (4x4)
 - A chave passa por um processo de expansão passando a ser de 44 *words* de 4 *bytes*
 
