@@ -83,6 +83,13 @@ Chaves
 - A chave passa por um processo de expansão passando a ser de 44 *words* de 4 *bytes*
 
 ---
+image: /aes_rounds.png
+layout: image
+backgroundSize: contain
+---
+
+
+---
 
 # Características AES
 Rodadas
@@ -91,6 +98,12 @@ Rodadas
   - 10 rodadas, chave de 16 bytes (128bits)
   - 12 rodadas, chave de 24 bytes (192bits)
   - 16 rodadas, chave de 32 bytes (256bits)
+
+---
+
+# Características AES
+Funções de transformação
+
 - Em cada rodada são aplicadas 4 funções de transformação:
   - `SubBytes`
   - `ShiftRows`
