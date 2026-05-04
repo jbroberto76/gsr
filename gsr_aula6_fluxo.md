@@ -40,11 +40,11 @@ layout: section
 # Estrutura
 Cifras de fluxo
 
-- Criptografa um *byte* por vez
-- Comumente aplicado a canais de comunicação ou aplicações cliente/servidor
+- Criptografia *byte* a *byte* (ou *bit* a *bit*)
+- Comumente aplicado a canais de comunicação, unidades de armazenamento, aplicações cliente/servidor, etc
 - Estrutura básica:
     - Chave de entrada ($K$)
-    - Fluxo de *bits*, ou fluxo de chave ($k$)
+    - Fluxo de chave, ou fluxo de *bits* ($k$)
     - XOR
     - Texto claro
     - Texto cifrado
@@ -116,19 +116,19 @@ Vantagens
 - Reutilização de chaves
 
 ---
+layout: section
+---
+
+# Aplicações
+
+---
 
 # Cifras de Fluxo
 Aplicações
 
-- Canais de comunicação
+- Canais de comunicação (VPN)
 - Cliente/Servidor
 - Criptografia de unidades de armazenamento
-
----
-layout: section
----
-
-# Cifras Típicas
 
 ---
 
@@ -137,6 +137,7 @@ Exemplos
 
 - Cifra de *Vernam*
 - Salsa20
+- ChaCha20
 - RC4
 
 ---
@@ -200,19 +201,21 @@ Aplicações
 # UUID
 Versões
 
-- **UUIDv1** Baseado no *timestamp* e no endereço MAC da máquin (previsível)
+- **UUIDv1** Baseado no *timestamp* e no endereço MAC da máquina (previsível)
 - **UUIDv4** Gerado usando números aleatórios ou pseudo-aleatórios. É a versão mais comum (imprevisível)
 - Outras versões (v3, v5) são baseadas em *hash* de namespaces e nomes
+
+[Online UUID Generator](https://www.uuidgenerator.net/)
 
 ---
 
 # `nonce` e UUID
 
-| Característica | **Nonce (Requisito)** | **UUID (Realidade)** | **É um Bom Nonce?** |
+| Característica | Nonce (Requisito) | Status UUID | É um Bom Nonce? |
 | :--- | :--- | :--- | :--- |
-| **Unicidade** | **Obrigatória** | **Alta probabilidade** (depende da versão). UUIDs são projetados para serem únicos, mas colisões teoricamente são possíveis (embora muito raras). | **✅ Geralmente Sim** |
-| **Uso Único** | **Obrigatório** | O UUID em si não impõe isso. Cabe ao sistema/implementação garantir que um UUID específico não seja reutilizado como nonce. | **✅ Sim (se bem gerido)** |
-| **Imprevisibilidade**| **Obrigatória** | **Depende da Versão.** UUIDv1 é **previsível**. UUIDv4 é **imprevisível** (se usar CSPRNG). | **UUIDv4: ✅ Sim** <br> **UUIDv1: ❌ Não** |
+| Unicidade | Obrigatória | Alta probabilidade (depende da versão). UUIDs são projetados para serem únicos, mas colisões teoricamente são possíveis (embora muito raras). |  Geralmente Sim |
+| Uso Único | Obrigatório | UUID não garante. Cabe ao sistema/implementação garantir que um UUID específico não seja reutilizado como nonce. | Sim (demanda gerenciamento) |
+| Imprevisibilidade| Obrigatória | UUIDv1 é **previsível**. UUIDv4 é **imprevisível** (se usar CSPRNG). | UUIDv4: Sim |
 
 ---
 
@@ -234,6 +237,38 @@ Propriedades
 
 - Imprevisiblidade
 - Pseudoaleatoriedade
+
+---
+
+# ChaCha20
+
+- Criado a partir do Salsa20 em 2008
+- Adotado pelo Google juntamente com Poy1305 em substituição ao RC4
+- OpensSSH
+- WireGuard VPN protocol
+
+---
+layout: image-right
+image: https://xilinx.github.io/Vitis_Libraries/security/2019.2/_images/chacha.png
+backgroundSize: contain
+---
+
+# ChaCha20
+*Input*
+- State de 16 words com 32bits
+    - Chave de 256 bits
+    - Contador de 32 bits
+    - Nonce de 96 bits
+    - Mensagem (*Plaintext*)
+
+---
+
+# ChaCha20
+Características
+- Baixíssima demanda computacional
+- Espaço de chaves extenso (256bits)
+- O Nonce garante originalidade ao processo
+- Resistente a *Timing Attacks*
 
 ---
 
@@ -349,6 +384,13 @@ backgroundSize: contain
 
 # RC4
 Animação com `State` de 32 bytes
+
+---
+layout: section
+---
+
+# Vulnerabilidades
+
 
 ---
 layout: quote
