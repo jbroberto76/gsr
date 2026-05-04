@@ -434,7 +434,6 @@ Resumo
 - Atualmente, o RC4 é considerado **obsoleto**
 - Removido da TLS desde a versão 1.0
 
-
 ---
 
 # Referências
