@@ -97,7 +97,7 @@ Rodadas
 - A cifra é executada em diversas rodadas, segundo o tamanho da chave:
   - 10 rodadas, chave de 16 bytes (128bits)
   - 12 rodadas, chave de 24 bytes (192bits)
-  - 16 rodadas, chave de 32 bytes (256bits)
+  - 14 rodadas, chave de 32 bytes (256bits)
 
 ---
 
